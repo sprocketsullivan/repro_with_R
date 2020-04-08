@@ -1,12 +1,13 @@
 # create several files for later read in
+dir.create("./01_Functions/created_files/")
 for (i in 1:100) {
-  write.csv(file = paste("file_", i, ".csv", sep = ""), data.frame(y = rnorm(20, 0, 3)))
+  write.csv(file = paste("./01_Functions/created_files/file_", i, ".csv", sep = ""), data.frame(y = rnorm(20, 0, 3)))
 }
 # Exercise 1
 # write a function to load and retrieve the mean and max of each file
 # plot a boxplot
 extractor <- function(k) {
-  test.data <- read.csv(paste("file_", k, ".csv", sep = ""))
+  test.data <- read.csv(paste("./01_Functions/created_files/file_", k, ".csv", sep = ""))
   print(mean(test.data$y))
   print(max(test.data$y))
   boxplot(test.data$y)
@@ -37,8 +38,8 @@ for (i in 1:100) {
 
 # identify all data files with the pattern="file*"
 # and delete them
-files <- dir()
-file.remove(files[grep("file*", files)])
+files <- dir("./01_Functions/created_files/")
+file.remove(paste("./01_Functions/created_files/",files[grep("file*", files)],sep=""))
 
 # if you are finished early read the chapter on style guide
 # https://swcarpentry.github.io/r-novice-inflammation/06-best-practices-R/
