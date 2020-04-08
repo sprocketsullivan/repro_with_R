@@ -1,9 +1,6 @@
----
-title: "Reproducible Research with R"
-output: html_notebook
----
+# Reproducible Research with R
 
-# Preparation for the course
+## Preparation for the course
 
 Each participants should prior to the course:
 
