@@ -61,8 +61,9 @@ Each session will begin with a 20 Minute Presentation on issues of reproducibili
 The installation has to be done only once. The library has to be loaded each time R is restarted.
 It is good practice to load the libraries at the start of the script where they are used.
 
+## Instructions for RStudio Cloud
 
-
+I will invite you to RStudio Cloud before the course, you need an account however (see [Preparation](#Preparation-for-the-course)). When the course starts we will the clone the course project to your project folder. All libraries are preinstalled. Each folder in the project is one course day. You will need to work on the exercise file. Only resort to the solution file after the course day. The exercise is that you try to solve this on your own (with our help) and not just copy paste a solution.
 
 
 
