@@ -31,10 +31,10 @@ We will meet on Fridays in an online format.  We will use a video confercing sof
  II) Homework: Play around with RCloud and your own RStudio instance on your computer
 2. 14.05. Data management
  I) Exercise: Vectorisation
- II) Homework: tidyverse on Datacamp
+ II) Homework: tidyverse on Datacamp; Read: https://doi.org/10.1038/s41598-018-27482-2
 3. 22.05.Tidyverse
  I) Exercise: tidyverse
- II) Homework: ggplot2 part 1 on Datacamp
+ II) Homework: ggplot2 part 1 on Datacamp; Read: https://doi.org/10.1371/journal.pone.0185195
 4. 29.05. Advanced Plotting
  I) Exercise: ggplot
  II) Homework: course of your choice on Datacamp
@@ -51,7 +51,18 @@ We will meet on Fridays in an online format.  We will use a video confercing sof
 
 ## Technical challenges
 
-This course will be taught online only and with that come some challenges. In the first session we will try to resolve as many as possible. Each session will begin with a 20 Minute Presentation on issues of reproducibility (see [Course Program](#Course-Program)) 
+This course will be taught online only and with that come some challenges. In the first session we will try to resolve as many as possible. We will use the Charité instance of MS teams as our platform for video meetings. All code will be provided on Github where also this document here resides. Additionally, an OSF prject will contain all presentations and a link to the Github repository.  
+Each session will begin with a 20 Minute Presentation on issues of reproducibility (see [Course Program](#Course-Program)). After this, there will be a short introduction to R functionalities needed in the upcoming exercise. The exercise itself will be done online in the RStudio cloud. This allows us to run all the exercises without the need to install everything locally on your computer. You are encouraged, however, to also do the same things locally on your computer. Please bear in mind that you need to install all libraries prior to using them
+
+
+    install.packages("tidyverse")
+    library(tidyverse)
+
+The installation has to be done only once. The library has to be loaded each time R is restarted.
+It is good practice to load the libraries at the start of the script where they are used.
+
+
+
 
 
 
