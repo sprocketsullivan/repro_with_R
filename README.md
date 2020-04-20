@@ -26,28 +26,34 @@ Important resources to use if you do not know how to proceed/need help:
 We will meet on Fridays in an online format.  We will use a video confercing software. Each course will consist of a short lecture on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.
 
 0. Pre course work: Course work on Datacamp (Introduction and Intermediate R)
-1. Preregstration, Intro to RStudio Cloud and R (have the Base R Cheat Sheet ready)
+1. 24.04.Preregstration, Intro to RStudio Cloud and R (have the Base R Cheat Sheet ready)
  I) Exercise: Functions
  II) Homework: Play around with RCloud and your own RStudio instance on your computer
-2. Data management
+2. 14.05. Data management
  I) Exercise: Vectorisation
  II) Homework: tidyverse on Datacamp
-3. Tidyverse
+3. 22.05.Tidyverse
  I) Exercise: tidyverse
  II) Homework: ggplot2 part 1 on Datacamp
-4. Advanced Plotting
+4. 29.05. Advanced Plotting
  I) Exercise: ggplot
  II) Homework: course of your choice on Datacamp
-5. Linear Models
+5. 05.06. Linear Models
  I) Exercise: linear_models
  II) Homework: course of your choice on Datacamp
-6. Linear Mixed Models
+6. 12.06. Linear Mixed Models
  I) Exercise: linear_mixed_models
  II) Homework: Read through the [tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github
-7. Hackathon (One Saturday)
+7. Hackathon (One Saturday tbd)
   I) Exercise: Git and Github
   II) Bring your own small problem, we will work on it in small groups
-8. Publishing models and Goodbye
+8. 19.06. Reproducible Research from planning to publication
+
+## Technical challenges
+
+This course will be taught online only and with that come some challenges. In the first session we will try to resolve as many as possible. Each session will begin with a 20 Minute Presentation on issues of reproducibility (see [Course Program](#Course-Program)) 
+
+
 
 
 
