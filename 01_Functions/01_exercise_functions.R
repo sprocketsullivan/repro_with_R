@@ -14,7 +14,7 @@ for (i in 1:100) {
 # plot the first 10 datasets
 # the following line will ensure that each plot has a 2 by 5 panel layout
 par(mfrow = c(2, 5))
-
+par(mar=c(.5,1.5,.5,.5))
 
 
 # now plot only extreme datasets
@@ -30,10 +30,11 @@ par(mfrow = c(2, 5))
 dev.off()
 # let's hope it's not more than 16:)
 par(mfrow = c(4, 4))
+par(mar=c(.5,1.5,.5,.5))
 for (i in 1:100) {
   #use your second function here!
 }
-
+# IF plot margin are too small enlarge plot window in the lower right corner of the RStudio IDE
 # identify all data files with the pattern="file*"
 # and delete them
 files <- dir("./01_Functions/created_files/")

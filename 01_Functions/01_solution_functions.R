@@ -24,7 +24,7 @@ for (i in 1:10) {
 # give the number of the data set
 # write a separate function for this
 extractor2 <- function(k) {
-  test.data <- read.csv(paste("file_", k, ".csv", sep = ""))
+  test.data <- read.csv(paste("./01_Functions/created_files/file_", k, ".csv", sep = ""))
   if (abs(mean(test.data$y)) > 1) {
     boxplot(test.data$y)
     print(k)
@@ -34,10 +34,12 @@ extractor2 <- function(k) {
 dev.off()
 # let's hope it's not more than 16:)
 par(mfrow = c(4, 4))
+par(mar=c(.5,1.5,.5,.5))
 for (i in 1:100) {
   extractor2(i)
 }
 
+# IF plot margin are too small enlarge plot window in the lower right corner of the RStudio IDE
 # identify all data files with the pattern="file*"
 # and delete them
 files <- dir("./01_Functions/created_files/")
