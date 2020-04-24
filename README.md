@@ -29,7 +29,7 @@ We will meet on Fridays in an online format.  We will use a video confercing sof
 1. 24.04.Preregstration, Intro to RStudio Cloud and R (have the Base R Cheat Sheet ready)
  I) Exercise: Functions
  II) Homework: Play around with RCloud and your own RStudio instance on your computer
-2. 14.05. Data management
+2. 15.05. Data management
  I) Exercise: Vectorisation
  II) Homework: tidyverse on Datacamp; Read: https://doi.org/10.1038/s41598-018-27482-2
 3. 22.05.Tidyverse
