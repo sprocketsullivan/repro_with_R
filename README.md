@@ -44,10 +44,10 @@ We will meet on Fridays in an online format.  We will use a video confercing sof
 6. 12.06. Linear Mixed Models
  I) Exercise: linear_mixed_models
  II) Homework: Read through the [tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github
-7. Hackathon (One Saturday tbd)
+7. 19.06. Hackathon (!! 4h Session !!)
   I) Exercise: Git and Github
   II) Bring your own small problem, we will work on it in small groups
-8. 19.06. Reproducible Research from planning to publication
+8. 26.06. Reproducible Research from planning to publication
 
 ## Technical challenges
 
