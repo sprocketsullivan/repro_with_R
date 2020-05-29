@@ -47,6 +47,7 @@ We will meet on Fridays in an online format.  We will use a video confercing sof
 7. 19.06. Hackathon (!! 4h Session !!)
   I) Exercise: Git and Github
   II) Bring your own small problem, we will work on it in small groups
+  Enter your problem into the word [document](https://charitede.sharepoint.com/:w:/s/ReproducibleResearchwithR/EWy54kA-0FpEihuwL2SlTC8B0Wt7yIpLcwvUGJcF40isWQ?e=UWGqwu)
 8. 26.06. Reproducible Research from planning to publication
 
 ## Technical challenges
