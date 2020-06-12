@@ -78,6 +78,7 @@ table_data <-
 # read in the help funciton what input prop.test needs
 p.1 <- prop.test(x = table_data$n_outcome[1:2], n = table_data$N_outcome[1:2])
 p.2 <- prop.test(x = table_data$n_outcome[3:4], n = table_data$N_outcome[3:4])
+
 table_data$p <- c(NA, p.1$p.value, NA, p.2$p.value)
 options(knitr.kable.NA = "")
 # then print it in a table using the kable command
