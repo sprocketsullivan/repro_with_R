@@ -8,7 +8,8 @@ output: html_document
 # Covid and Weather
 
 There is a recent [report](https://www.medrxiv.org/content/10.1101/2020.06.15.20131490v1) by researchers claims that wheather parameters predict the development of Covid-19 infections. Several other preprints report no connection on different levels. We will try to see what happens in Germany.  
-Challenges are to work with unknown packages and bring two different datasets together.
+Challenges are to work with unknown packages and bring two different datasets together.  
+
 
 1. Install the libraries from the library script.
 2. Check for a German city of your choice whether there is a correlation between Mean Temperature at each day and Covid infection increases 7/14 days later
