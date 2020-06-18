@@ -1,0 +1,63 @@
+---
+title: "Create a living document"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, libraries, message = FALSE, echo = FALSE}
+library(tidyverse)
+library(broom)
+```
+
+
+
+```{r PlantGrowth, echo = FALSE}
+my_data <- PlantGrowth
+```
+
+### Summary statistics
+
+```{r PlantGrowth summary, echo = FALSE}
+summary_stats <-
+  my_data %>% 
+  group_by(group) %>% 
+  summarize(group_mean = mean(weight))
+
+summary_stats
+```
+
+### Boxplot of weight by treatment group
+
+```{r, Boxplot, echo = FALSE}
+ggplot(data = my_data, aes(x = group, y = weight, color = group)) +
+  geom_boxplot() +
+  theme_bw() +
+  labs(y = "Weight", x = "Group", color = "Group")
+```
+
+### Statistical analysis
+
+```{r, analysis, results = "hide"}
+m1      <- lm(weight ~ group, data = my_data)
+m1_test <- anova(m1)
+```
+
+```{r, echo = FALSE, results = "hide"}
+summary(m1)
+m1_tidy <- tidy(m1, conf.int = TRUE)
+anova_tidy <- tidy(m1_test)
+```
+
+```{r, echo = FALSE}
+m1_tidy
+anova_tidy
+```
+
+### Results summary
+
+
+
+

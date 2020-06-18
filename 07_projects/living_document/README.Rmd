@@ -1,0 +1,47 @@
+---
+title: "Create a living document"
+author: "Mex"
+date: "18/06/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## A living document
+
+To create a living, i.e. dynamic document, we will use R Markdown. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see this [cheat sheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) or this [reference guide](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
+
+In this project, we will work with the built-in dataset `PlantGrowth`. This contains results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions. We will create plots, run a simple analysis, and write a short results summary that should include summary statistics, the test statistic of your analysis, and the *p*-value. 
+
+We will work in two separate scripts. One is the classic R script, the other an R Markdown document. 
+
+1. Load the dataset `PlantGrowth`.
+2. Make a nice plot. (Remember that we do not use bar plots for continuous data.)
+3. Calculate the means of the three groups in a separate dataframe.
+4. Run an appropriate analysis on the dataset.
+5. Create a `tidy`output that includes the confidence intervals for the estimates.
+6. Create an R Markdown document and transfer your steps from the R script to the document. Use separate headings and code chunks for the different steps.
+7. In the R Markdown document, write a short results summary. Extract all values (means, CI's etc.) from your R objects using inline code. **Example**: The first weight value in the `PlantGrowth` dataset is `r PlantGrowth$weight[1]`.   
+
+
+## About R Markdown
+
+1. When you click the **Knit** button a document will be generated.
+
+2. The document includes both content and output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+3. You can also include plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
