@@ -26,40 +26,41 @@ Important resources to use if you do not know how to proceed/need help:
 We will meet on Wednesdays in an online format.  We will use Teams as video conferencing software. Each course will consist of a short lecture on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
 0. Pre course work: Course work on Datacamp (Introduction to R)  
 
-**Introductiory Part**  
-1. I_01 04.11. Introduction to Reproducible Workflows, R, RStudio, Rstudio Cloud  
-2. I_02 11.11. Descriptive statistics with R, Notebooks  
-3. I_03 18.11. Inferential statistics with R  
+**Introductory Part**  
+1. 04.11. Introduction to Reproducible Workflows, R, RStudio, Rstudio Cloud  
+2. 11.11. Descriptive statistics with R, Notebooks  
+3. 18.11. Inferential statistics with R  
     I) Homework: Intermediate R on DataCamp  
     
 **Advanced Part**  
-4. A_01. 25.11.Preregstration, functions in R  
+4. 25.11.Preregistration, functions in R  
    I) Exercise: Functions  
    II) Homework: Play around with RStudio Cloud and your own RStudio instance on your computer  
-5. A_02. 02.12. Data management  
+5. 02.12. Data management  
  I) Exercise: Vectorisation  
  II) Homework: Read through the [tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github  
-6. A_03. 09.12. Git and Github  
+6. 09.12. Git and Github  
   I) Exercise: Git and Github (not as an exercise on Github 
   II) Homework: tidyverse on Datacamp; Read: https://doi.org/10.1038/s41598-018-27482-2  
-7. A_04. 16.12. Tidyverse  
+7. 16.12. Tidyverse  
  I) Exercise: tidyverse  
  II) Homework: ggplot2 part 1 on Datacamp; Read: https://doi.org/10.1371/journal.pone.0185195  
-8. A_05. 13.01. Advanced Plotting  
+8. 13.01. Advanced Plotting  
    I) Exercise: ggplot  
    II) Homework: course of your choice on Datacamp  
-9. A_06. 20.01. Linear Models  
+9. 20.01. Linear Models  
  I) Exercise: linear_models  
  II) Homework: course of your choice on Datacamp  
-10. A_07. 27.01. Linear Mixed Models  
+10. 27.01. Linear Mixed Models  
  I) Exercise: linear_mixed_models  
-11. A_08. 03.02. Theme of your choice  
-12. A_09. 10.02. Theme of your choice  
+11. 03.02. Theme of your choice  
+12. 10.02. Theme of your choice  
 Examples:  
 * Machine Learning  
 * shiny apps  
 * meta research  
-13. A_10. 17.02. Reproducible Research from planning to publication
+13. 17.02. Reproducible Research from planning to publication  
+
 
 ## Technical challenges
 
