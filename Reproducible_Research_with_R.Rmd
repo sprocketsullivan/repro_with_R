@@ -1,0 +1,19 @@
+---
+title: "Reproducible Research with R"
+output: html_notebook
+---
+
+# Preparation for the course
+
+Each participants should prior to the course:
+
+* Complete [Datacamp](https://learn.datacamp.com/) courses Introduction and Intermediate R. If you have not yet received an invitation please contact us!
+* Install in their newest(!) version:  
+  + [R](https://cran.r-project.org/)
+  + [RStudio](https://rstudio.com/products/rstudio/download/)  
+  + [Git](https://git-scm.com/) (this is for version control)
+* Get accounts for:
+  + [Github](https://github.com/) You can have the academic version with Charité email
+  + [RStudio Cloud](https://rstudio.cloud) You can login via the Github credentials
+  
+
