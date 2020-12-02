@@ -48,7 +48,4 @@ file.remove(paste("./01_Functions/created_files/", files[grep("file*", files)], 
 # if you are finished early read the chapter on style guide
 # https://swcarpentry.github.io/r-novice-inflammation/06-best-practices-R/
 # or
-# http://adv-r.had.co.nz/Style.html
-# or
-# https://google.github.io/styleguide/Rguide.xml
-# report this to other participants later
+# https://style.tidyverse.org/
