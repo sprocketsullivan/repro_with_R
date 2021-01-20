@@ -79,6 +79,10 @@ table_data <-
 p.1 <- prop.test(x = table_data$n_outcome[1:2], n = table_data$N_outcome[1:2])
 p.2 <- prop.test(x = table_data$n_outcome[3:4], n = table_data$N_outcome[3:4])
 
+prop.test(x = c(155,200), n = c(159,200))
+fisher.test(x = matrix(c(155,159,200,200),nrow=2))
+chisq.test(x = matrix(c(155,159,200-155,200-159),nrow=2))
+
 table_data$p <- c(NA, p.1$p.value, NA, p.2$p.value)
 options(knitr.kable.NA = "")
 # then print it in a table using the kable command

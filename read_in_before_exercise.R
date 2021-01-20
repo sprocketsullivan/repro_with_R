@@ -15,9 +15,9 @@
 library(tidyverse)
 library(arm)
 # read in data
-# my_data <- read_csv("IST_corrected.csv")
+my_data <- read_csv("IST_corrected.csv")
 # alternative directly from the web
-my_data <- read_csv(url("https://datashare.is.ed.ac.uk/bitstream/handle/10283/128/IST_corrected.csv?sequence=5&isAllowed=y"))
+#my_data <- read_csv(url("https://datashare.is.ed.ac.uk/bitstream/handle/10283/128/IST_corrected.csv?sequence=5&isAllowed=y"))
 # redo Table 1 from Lancet study
 # first create a new variable DDEADC_verb
 my_data$FDEAD_verb <- factor(my_data$FDEADC, labels = c("unknown", "Initial stroke", "Recurrent ischaemic stroke", "Haemorrhagic stroke", "Coronary heart disease", "Pulmonary embolism", "Extracranial haemorrhage", "Other vascular", "Non-vascular"))

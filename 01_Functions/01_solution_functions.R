@@ -34,7 +34,7 @@ extractor2 <- function(k) {
 dev.off()
 # let's hope it's not more than 16:)
 par(mfrow = c(4, 4))
-par(mar=c(.5,1.5,.5,.5))
+par(mar = c(.5, 1.5, .5, .5))
 for (i in 1:100) {
   extractor2(i)
 }
