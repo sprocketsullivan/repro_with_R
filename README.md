@@ -4,7 +4,7 @@
 
 Each participants should prior to the course:
 
-* Complete [Datacamp](https://learn.datacamp.com/) courses Introduction (before Intro Part) and Intermediate R (Before Advanced Part). If you have not yet received an invitation please contact us!
+* Complete [DataCamp](https://learn.datacamp.com/) courses Introduction (before Intro Part) and Intermediate R (Before Advanced Part). If you have not yet received an invitation please contact us!
 * Install in the newest(!) version:  
   + [R](https://cran.r-project.org/)
   + [RStudio](https://rstudio.com/products/rstudio/download/)  
@@ -23,49 +23,40 @@ Important resources to use if you do not know how to proceed/need help:
 
 ## Course Program
 
-We will meet on Wednesdays in an online format.  We will use Teams as video conferencing software. Each course will consist of a short lecture on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
-0. Pre course work: Course work on Datacamp (Introduction to R)  
+We will meet on Thursdays in an online format.  We will use Teams as video conferencing software. Each course will consist of a short lecture on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
+0. Pre course work: Course work on DataCamp (Introduction to R)  
 
 **Introductory Part**  
-1. 04.11. Introduction to Reproducible Workflows, R, RStudio, Rstudio Cloud  
-2. 11.11. Descriptive statistics with R, Notebooks  
-3. 18.11. Inferential statistics with R  
+1. 15.04. Introduction to Reproducible Workflows, R, RStudio, Rstudio Cloud  
+2. 22.04. Descriptive +  inferential statistics with R, Notebooks  
     I) Homework: Intermediate R on DataCamp  
     
 **Advanced Part**  
-4. 25.11.Preregistration, functions in R  
+3. 29.04.Preregistration, functions in R  
    I) Exercise: Functions  
    II) Homework: Play around with RStudio Cloud and your own RStudio instance on your computer  
-5. 02.12. Data management  
+4. 06.05. Data management  
  I) Exercise: Vectorisation  
  II) Homework: Read through the [tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github  
-6. 09.12. Git and Github  
+5. 20.05. Git and Github  
   I) Exercise: Git and Github (not as an exercise on Github 
-  II) Homework: tidyverse on Datacamp; Read: https://doi.org/10.1038/s41598-018-27482-2  
-7. 16.12. Tidyverse  
+  II) Homework: tidyverse on DataCamp; Read: https://doi.org/10.1038/s41598-018-27482-2  
+6. 27.05. Tidyverse  
  I) Exercise: tidyverse  
- II) Homework: ggplot2 part 1 on Datacamp; Read: https://doi.org/10.1371/journal.pone.0185195  
-8. 13.01. Advanced Plotting  
+ II) Homework: ggplot2 part 1 on DataCamp; Read: https://doi.org/10.1371/journal.pone.0185195  
+7. 03.06. Advanced Plotting  
    I) Exercise: ggplot  
-   II) Homework: course of your choice on Datacamp  
-9. 20.01. Linear Models  
+   II) Homework: course of your choice on DataCamp  
+8. 10.06. Linear Models  
  I) Exercise: linear_models  
- II) Homework: course of your choice on Datacamp  
-10. 27.01. Linear Mixed Models  
- I) Exercise: linear_mixed_models  
-11. 03.02. Theme of your choice  
-12. 10.02. Theme of your choice  
-Examples:  
-* Machine Learning  
-* shiny apps  
-* meta research  
-13. 17.02. Reproducible Research from planning to publication  
+ II) Homework: course of your choice on DataCamp  
+9. 17.06. Reproducible Research from planning to publication  
 
 
 ## Technical challenges
 
 This course will be taught online only and with that come some challenges. In the first session we will try to resolve as many as possible. We will use the Charité instance of MS teams as our platform for video meetings. For questions during the exercises, we have separate rooms. You can raise your hand and we will then invite you in one of the rooms. All code will be provided on Github where also this document here resides. Additionally, an [OSF project](https://osf.io/wvdxy/) will contain all presentations and a link to the Github repository.  
-Each session will begin with a 20 Minute Presentation on issues of reproducibility (see [Course Program](#Course-Program)). After this, there will be a short introduction to R functionalities needed in the upcoming exercise. The exercise itself will be done online in the RStudio cloud. This allows us to run all the exercises without the need to install everything locally on your computer. You are encouraged, however, to also do the same things locally on your computer. Please bear in mind that you need to install all libraries prior to using them.
+Each session will begin with a 20 Minute Presentation on issues of reproducibility (see [Course Program](#Course-Program)). After this, there will be a short introduction to R functionalities needed in the upcoming exercise. The exercise itself will be done online in the RStudio Cloud. This allows us to run all the exercises without the need to install everything locally on your computer. You are encouraged, however, to also do the same things locally on your computer. Please bear in mind that you need to install all libraries prior to using them.
 
 
     install.packages("tidyverse")
