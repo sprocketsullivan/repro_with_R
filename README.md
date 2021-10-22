@@ -24,33 +24,32 @@ Important resources to use if you do not know how to proceed/need help:
 ## Course Program
 
 We will meet on Thursdays in an online format.  We will use Teams as video conferencing software. Each course will consist of a short lecture on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
-0. Pre course work: Course work on DataCamp (Introduction to R)  
 
-**Introductory Part**  
-1. 15.04. Introduction to Reproducible Workflows, R, RStudio, Rstudio Cloud  
-2. 22.04. Descriptive +  inferential statistics with R, Notebooks  
-    I) Homework: Intermediate R on DataCamp  
-    
-**Advanced Part**  
-3. 29.04.Preregistration, functions in R  
+0. Pre course work: Course work on DataCamp (Introduction to R + Intermediate R)  
+
+1. 10.11. Preregistration, Functions in R  
    I) Exercise: Functions  
-   II) Homework: Play around with RStudio Cloud and your own RStudio instance on your computer  
-4. 06.05. Data management  
- I) Exercise: Vectorisation  
- II) Homework: Read through the [tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github  
-5. 20.05. Git and Github  
-  I) Exercise: Git and Github (not as an exercise on Github 
-  II) Homework: tidyverse on DataCamp; Read: https://doi.org/10.1038/s41598-018-27482-2  
-6. 27.05. Tidyverse  
- I) Exercise: tidyverse  
- II) Homework: ggplot2 part 1 on DataCamp; Read: https://doi.org/10.1371/journal.pone.0185195  
-7. 03.06. Advanced Plotting  
+   II) Homework: Play around with RStudio Cloud and your own RStudio instance on your computer 
+2. 18.11. Data Management  
+   I) Exercise: Vectorisation  
+   II) Homework: Read through the [tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github  
+3. 25.11. Git and Github 
+   I) Exercise: Git and Github (not as an exercise on Github 
+   II) Homework: Introduction to the Tidyverse on DataCamp; Read: https://doi.org/10.1038/s41598-018-27482-2  
+4. 02.12. Tidyverse  
+   I) Exercise: tidyverse  
+   II) Homework: Introduction to Data Visualization with ggplot2 on DataCamp; Read: https://doi.org/10.1371/journal.pone.0185195  
+5. 09.12. Advanced Plotting
    I) Exercise: ggplot  
+   II) Homework: course of your choice on DataCamp 
+6. 16.12. Linear Models
+   I) Exercise: linear_models  
    II) Homework: course of your choice on DataCamp  
-8. 10.06. Linear Models  
- I) Exercise: linear_models  
- II) Homework: course of your choice on DataCamp  
-9. 17.06. Reproducible Research from planning to publication  
+7. 13.01. Linear Mixed Models    
+8. 20.01. Topic of your choice
+9. 27.01. Topic of your choice
+10. 03.02. Reproducible Research from Planning to Publication
+11. 10.02. Backup session 
 
 
 ## Technical challenges
