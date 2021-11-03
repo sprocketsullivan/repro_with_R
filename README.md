@@ -34,7 +34,7 @@ We will meet on Thursdays in an online format.  We will use Teams as video confe
    I) Exercise: Vectorisation  
    II) Homework: Read through the [tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github  
 3. 25.11. Git and Github 
-   I) Exercise: Git and Github (not as an exercise on Github 
+   I) Exercise: Git and Github (not as an exercise on Github) 
    II) Homework: Introduction to the Tidyverse on DataCamp; Read: https://doi.org/10.1038/s41598-018-27482-2  
 4. 02.12. Tidyverse  
    I) Exercise: tidyverse  
