@@ -48,7 +48,7 @@ Part 2 Tidyverse
 *Homework*:  
 Datacamp course ggplot2   
 
-3. Session  
+3. Session 19.05.  
 
 Part 1 Advanced Plotting  
    Exercise: ggplot  
@@ -59,7 +59,7 @@ Part 2 Introduction Statistics with R
 *Homework*:  
 2 courses of your choice on DataCamp  
 
-4. Session  
+4. Session 23.06.  
 
 Part 1 Linear Mixed Models    
    Exercise: linear_mixed_models  
@@ -69,7 +69,7 @@ Part 2 Reproducible Research from Planning to Publication
 
 ## Technical challenges
 
-We plan to conduct all sessions in presence. Please bring a laptop with Chrome browser installed. You can also install everything locally, but it is not certain whether we will have time to trobleshoot every computer.
+We plan to conduct all sessions in presence. Please bring a laptop with Chrome browser installed. You can also install everything locally, but it is not certain whether we will have time to troubleshoot every computer.
 
 In case this course will be taught online some challenges apply. In the first session, we will try to resolve as many as possible. We will use the Charité instance of MS teams as our platform for video meetings. For questions during the exercises, we have separate rooms. You can raise your hand and we will then invite you in one of the rooms.  
 
