@@ -23,39 +23,59 @@ Important resources to use if you do not know how to proceed/need help:
 
 ## Course Program
 
-We will meet on Thursdays in an online format.  We will use Teams as video conferencing software. Each course will consist of a short lecture on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
+We will meet on Thursdays in an presence/online format.  We will use either Teams as video conferencing software or meet in the Atrium at the BIH (5th floor Anna Lousia Karsch Straße 2 10178 Berlin). Each course part will consist of a short lecture on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
 
 0. Pre course work: Course work on DataCamp (Introduction to R + Intermediate R)  
 
-1. 10.11. Preregistration, Functions in R  
-   I) Exercise: Functions  
-   II) Homework: Play around with RStudio Cloud and your own RStudio instance on your computer 
-2. 18.11. Data Management  
-   I) Exercise: Vectorisation  
-   II) Homework: Read through the [tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github  
-3. 25.11. Git and Github 
-   I) Exercise: Git and Github (not as an exercise on Github) 
-   II) Homework: Introduction to the Tidyverse on DataCamp; Read: https://doi.org/10.1038/s41598-018-27482-2  
-4. 02.12. Tidyverse  
-   I) Exercise: tidyverse  
-   II) Homework: Introduction to Data Visualization with ggplot2 on DataCamp; Read: https://doi.org/10.1371/journal.pone.0185195  
-5. 09.12. Advanced Plotting
-   I) Exercise: ggplot  
-   II) Homework: course of your choice on DataCamp 
-6. 16.12. Linear Models
-   I) Exercise: linear_models  
-   II) Homework: course of your choice on DataCamp  
-7. 13.01. Linear Mixed Models    
-8. 20.01. Topic of your choice
-9. 27.01. Topic of your choice
-10. 03.02. Reproducible Research from Planning to Publication
-11. 10.02. Backup session 
+1. Session 07.04. 
+Part 1 Preregistration, Functions in R  
+   Exercise: Functions  
+Part 2 Data Management  
+   Exercise: Vectorisation  
 
+*Homework*:  
+I Introduction to the Tidyverse on DataCamp  
+II  Read [Tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github  
+
+2. Session 05.05.  
+Part 1 Git and Github  
+   Exercise: Git and Github  
+
+Part 2 Tidyverse  
+   Exercise: tidyverse  
+   Read: https://doi.org/10.1371/journal.pone.0185195  
+
+*Homework*:  
+Datacamp course ggplot2   
+
+3. Session  
+
+Part 1 Advanced Plotting  
+   Exercise: ggplot  
+   
+Part 2 Introduction Statistics with R 
+   Exercise: linear_models  
+   
+*Homework*:  
+2 courses of your choice on DataCamp  
+
+4. Session  
+
+Part 1 Linear Mixed Models    
+   Exercise: linear_mixed_models  
+   
+Part 2 Reproducible Research from Planning to Publication  
+   Exercise: Open Peer Review  
 
 ## Technical challenges
 
-This course will be taught online only and with that come some challenges. In the first session we will try to resolve as many as possible. We will use the Charité instance of MS teams as our platform for video meetings. For questions during the exercises, we have separate rooms. You can raise your hand and we will then invite you in one of the rooms. All code will be provided on Github where also this document here resides. Additionally, an [OSF project](https://osf.io/wvdxy/) will contain all presentations and a link to the Github repository.  
-Each session will begin with a 20 Minute Presentation on issues of reproducibility (see [Course Program](#Course-Program)). After this, there will be a short introduction to R functionalities needed in the upcoming exercise. The exercise itself will be done online in the RStudio Cloud. This allows us to run all the exercises without the need to install everything locally on your computer. You are encouraged, however, to also do the same things locally on your computer. Please bear in mind that you need to install all libraries prior to using them.
+We plan to conduct all sessions in presence. Please bring a laptop with Chrome browser installed. You can also install everything locally, but it is not certain whether we will have time to trobleshoot every computer.
+
+In case this course will be taught online some challenges apply. In the first session, we will try to resolve as many as possible. We will use the Charité instance of MS teams as our platform for video meetings. For questions during the exercises, we have separate rooms. You can raise your hand and we will then invite you in one of the rooms.  
+
+All code will be provided on Github where also this document here resides. Additionally, an [OSF project](https://osf.io/wvdxy/) will contain all presentations and a link to the Github repository.  
+
+Each course part will begin with a 20 Minute Presentation on issues of reproducibility (see [Course Program](#Course-Program)). After this, there will be a short introduction to R functionalities needed in the upcoming exercise. The exercise itself will be done online in the RStudio Cloud. This allows us to run all the exercises without the need to install everything locally on your computer. You are encouraged, however, to also do the same things locally on your computer. Please bear in mind that you need to install all libraries prior to using them.
 
 
     install.packages("tidyverse")
