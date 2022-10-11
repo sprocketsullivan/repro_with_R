@@ -23,13 +23,15 @@ Important resources to use if you do not know how to proceed/need help:
 
 ## Course Program
 
-We will meet on Thursdays in an presence/online format.  We will use either Teams as video conferencing software or meet in the Atrium at the BIH (5th floor Anna Lousia Karsch Straße 2 10178 Berlin). Each course part will consist of a short lecture on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
+We will meet on Tuesdays in presence in the Atrium at the BIH (5th floor Anna Lousia Karsch Straße 2 10178 Berlin). Each course part will consist of two short lectures on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
 
 0. Pre course work: Course work on DataCamp (Introduction to R + Intermediate R)  
 
-1. Session 07.04. 
+1. Session 08.11. 
+
 Part 1 Preregistration, Functions in R  
-   Exercise: Functions  
+   Exercise: Functions 
+   
 Part 2 Data Management  
    Exercise: Vectorisation  
 
@@ -37,7 +39,8 @@ Part 2 Data Management
 I Introduction to the Tidyverse on DataCamp  
 II  Read [Tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github  
 
-2. Session 05.05.  
+2. Session 06.12.  
+
 Part 1 Git and Github  
    Exercise: Git and Github  
 
@@ -48,7 +51,7 @@ Part 2 Tidyverse
 *Homework*:  
 Datacamp course ggplot2   
 
-3. Session 19.05.  
+3. Session 17.01.  
 
 Part 1 Advanced Plotting  
    Exercise: ggplot  
@@ -59,7 +62,7 @@ Part 2 Introduction Statistics with R
 *Homework*:  
 2 courses of your choice on DataCamp  
 
-4. Session 23.06.  
+4. Session 31.01.  
 
 Part 1 Linear Mixed Models    
    Exercise: linear_mixed_models  
@@ -75,7 +78,7 @@ In case this course will be taught online some challenges apply. In the first se
 
 All code will be provided on Github where also this document here resides. Additionally, an [OSF project](https://osf.io/wvdxy/) will contain all presentations and a link to the Github repository.  
 
-Each course part will begin with a 20 Minute Presentation on issues of reproducibility (see [Course Program](#Course-Program)). After this, there will be a short introduction to R functionalities needed in the upcoming exercise. The exercise itself will be done online in the RStudio Cloud. This allows us to run all the exercises without the need to install everything locally on your computer. You are encouraged, however, to also do the same things locally on your computer. Please bear in mind that you need to install all libraries prior to using them.
+Each course part will begin with a 20-minute presentation on issues of reproducibility (see [Course Program](#Course-Program)). After this, there will be a short introduction to R functionalities needed in the upcoming exercise. The exercise itself will be done online in the RStudio Cloud. This allows us to run all the exercises without the need to install everything locally on your computer. You are encouraged, however, to also do the same things locally on your computer. Please bear in mind that you need to install all libraries prior to using them.
 
 
     install.packages("tidyverse")
@@ -86,7 +89,7 @@ It is good practice to load the libraries at the start of the script where they 
 
 ## Instructions for RStudio Cloud
 
-I will invite you to RStudio Cloud before the course, you need an account however (see [Preparation](#Preparation-for-the-course)). When the course starts we will the clone the course project to your project folder. All libraries are preinstalled. Each folder in the project is one course day. You will need to work on the exercise file. Only resort to the solution file after the course day. The exercise is that you try to solve this on your own (with our help) and not just copy paste a solution.
+I will invite you to RStudio Cloud before the course, you need an account however (see [Preparation](#Preparation-for-the-course)). When the course starts we will the clone the course project to your project folder. All libraries are pre-installed. Each folder in the project is one course day. You will need to work on the exercise file. Only resort to the solution file after the course day. The exercise is that you try to solve this on your own (with our help) and not just copy paste a solution.
 
 
 
