@@ -27,7 +27,7 @@ We will meet on Tuesdays in presence in the Atrium at the BIH (5th floor, Anna-L
 
 0. Pre course work: Course work on DataCamp (Introduction to R + Intermediate R)  
 
-**1. Session 15.11. **
+**1. Session 15.11.**
 
 Part 1 Preregistration, Functions in R  
    Exercise: Functions 
