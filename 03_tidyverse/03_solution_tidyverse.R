@@ -65,8 +65,8 @@ table_data2 <-
   )
 
 # combine both in a table
-# add a  column calles Analysis (ITT and PP as levels) and change it to the
-# first column thorugh the select command
+# add a  column called Analysis (ITT and PP as levels) and change it to the
+# first column through the select command
 # make use of the cheat sheet!
 table_data <-
   bind_rows(table_data1, table_data2) %>%
@@ -79,7 +79,7 @@ table_data <-
 p.1 <- prop.test(x = table_data$n_outcome[1:2], n = table_data$N_outcome[1:2])
 p.2 <- prop.test(x = table_data$n_outcome[3:4], n = table_data$N_outcome[3:4])
 
-prop.test(x = c(155,200), n = c(159,200))
+prop.test(x = c(155,159), n = c(200,200))
 fisher.test(x = matrix(c(155,159,200,200),nrow=2))
 chisq.test(x = matrix(c(155,159,200-155,200-159),nrow=2))
 
