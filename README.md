@@ -19,7 +19,7 @@ Important resources to use if you do not know how to proceed/need help:
 * Stackoverflow: A community of nerds at your disposal. All beginners questions have been already posted so a simple search is enough!
 * help function in R (put cursor on function name and press F1 or type ?function_name)
 * at the end of each help text there is a so called vignette that will give an executable example so that you can experiment with the function and its outputs
-* Contact us. We will explain rules for our (online) classes in the first session.
+* Contact us. We will explain rules for our classes in the first session.
 
 ## Course Program
 
