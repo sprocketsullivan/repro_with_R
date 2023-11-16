@@ -23,11 +23,11 @@ Important resources to use if you do not know how to proceed/need help:
 
 ## Course Program
 
-We will meet on Tuesdays, 10am - 2pm, in presence in the conference room Domblick at the BIH (5th floor, Anna-Lousia-Karsch-Straße 2, 10178 Berlin). Each course part will consist of two short lectures on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
+We will meet on Fridays, 10am - 2pm, in presence in the conference room Atrium at the BIH (5th floor, Anna-Lousia-Karsch-Straße 2, 10178 Berlin). Each course part will consist of two short lectures on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
 
 0. Pre course work: Course work on DataCamp (Introduction to R + Intermediate R)  
 
-**1. Session 09.05.**
+**1. Session 15.12.**
 
 Part 1 Preregistration, Functions in R  
    Exercise: Functions 
@@ -39,7 +39,7 @@ Part 2 Data Management
 I Introduction to the Tidyverse on DataCamp  
 II  Read [Tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github  
 
-**2. Session 23.05.**  
+**2. Session 19.01.**  
 
 Part 1 Git and Github  
    Exercise: Git and Github  
@@ -51,7 +51,7 @@ Part 2 Tidyverse
 *Homework*:  
 Datacamp course ggplot2   
 
-**3. Session 06.06.**  
+**3. Session 26.01.**  
 
 Part 1 Advanced Plotting  
    Exercise: ggplot  
@@ -62,7 +62,7 @@ Part 2 Introduction Statistics with R
 *Homework*:  
 2 courses of your choice on DataCamp  
 
-**4. Session 20.06.**  
+**4. Session 02.02.**  
 
 Part 1 Linear Mixed Models    
    Exercise: linear_mixed_models  
@@ -73,8 +73,6 @@ Part 2 Reproducible Research from Planning to Publication
 ## Technical challenges
 
 We plan to conduct all sessions in presence. Please bring a laptop with Chrome browser installed. You can also install everything locally, but it is not certain whether we will have time to troubleshoot every computer.
-
-In case this course will be taught online some challenges apply. In the first session, we will try to resolve as many as possible. We will use the Charité instance of MS teams as our platform for video meetings. For questions during the exercises, we have separate rooms. You can raise your hand and we will then invite you in one of the rooms.  
 
 All code will be provided on Github where also this document here resides. Additionally, an [OSF project](https://osf.io/wvdxy/) will contain all presentations and a link to the Github repository.  
 
