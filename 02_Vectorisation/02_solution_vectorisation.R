@@ -23,15 +23,16 @@ z <- x + y
 # The task is to
 # create a vector check.vector which is True/False
 # if an element in another vector (binary.vector) equals the previous element in binary.vector
+
 # Example in a for loop
 #####################
-# create a vector with 100 values of either 0 or 1 (echa with 50% probability)
+# create a vector with 100 values of either 0 or 1 (with 50% probability)
 binary.vector <- rbinom(100, 1, 0.5)
 # such a vector is equivalent to a vector holding TRUE/FALSE Values
 # Variables that can be either true or false are called Boolean
 # Remember that you can do operations (like +,-,*,/)
-# on these variables as well
-# initialise vector the vector
+# on these variables as well.
+# Initialise vector check.vector1
 # The NULL statement is helpful if you do not know
 # initially how many elements your vector should hold
 check.vector1 <- NULL
@@ -46,7 +47,7 @@ for (i in 2:length(binary.vector)) {
   }
 }
 #############
-# Write a vecorised version of this
+# Write a vectorised version of this
 # call the vector holding T/F values check.vector2
 #############
 # the helper vector moves the whole vector by one index up
