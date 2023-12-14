@@ -4,8 +4,8 @@ for (i in 1:100) {
   write.csv(file = paste("./01_Functions/created_files/file_", i, ".csv", sep = ""), data.frame(y = rnorm(20, 0, 3)))
 }
 # Exercise 1
-# write a function to load and retrieve the mean and max of each file
-# plot a boxplot
+# write a function to load and retrieve the mean and max of each file and plot a boxplot
+# You will first have to read in the creates files within the function with read.csv()
 
 
 
@@ -15,12 +15,16 @@ for (i in 1:100) {
 # the following line will ensure that each plot has a 2 by 5 panel layout
 par(mfrow = c(2, 5))
 par(mar=c(.5,1.5,.5,.5))
+for () {
+  # use the first function here 
+}
 
 
 # now plot only extreme datasets
 # where the mean is more than 1 away from 0
 # give the number of the data set
 # write a separate function for this
+# again, don't forget to first read in the files with read.csv() command 
 
 
 
