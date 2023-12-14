@@ -31,7 +31,7 @@ binary.vector <- rbinom(100, 1, 0.5)
 # Variables that can be either true or false are called Boolean
 # Remember that you can do operations (like +,-,*,/)
 # on these variables as well
-# initialise vector the vector
+# Initialise the vector check.vector1
 # The NULL statement is helpful if you do not know
 # initially how many elements your vector should hold
 check.vector1 <- NULL
@@ -46,7 +46,7 @@ for (i in 2:length(binary.vector)) {
   }
 }
 #############
-# Write a vecorised version of this
+# Write a vectorised version of this
 # call the vector holding T/F values check.vector2
 #############
 
