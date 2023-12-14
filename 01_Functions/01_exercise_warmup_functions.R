@@ -36,14 +36,14 @@ descriptive_stats(df_hw)
 # We now create a function to calculate the BMI from the 
 # height and weight values. 
 # We would like to get a print out of the BMI values in the 
-# dataset that are above 25. 
+# dataset which fall below 20. 
 
 
 
 BMI_check <- function(data) {
   BMI <- 
   for (i in 1:length()){
-    if ( > 25) {
+    if ( < 20) {
       print()
     }
   }

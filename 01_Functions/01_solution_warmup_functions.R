@@ -31,13 +31,13 @@ descriptive_stats(df_hw)
 
 # We now create a function to calculate the BMI from the 
 # height and weight values 
-
-
+# We would like R to print those values of BMI which 
+# fall below 20. 
 
 BMI_check <- function(data) {
   BMI <- (data$weight)/data$height^2
   for (i in 1:length(BMI)){
-  if (BMI[i] > 25) {
+  if (BMI[i] < 20) {
     print(BMI[i])
   }
   }
