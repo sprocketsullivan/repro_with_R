@@ -5,9 +5,13 @@ df_hw <- read.csv("./01_Functions/df_hw.csv", row.names = 1)
 
 # The dataset contains height and weight measures 
 # of 25000 individuals 
-dim(df_hw)
-colnames(df_hw) 
-head(df_hw)
+# Check how many columns and rows are contained in the 
+# dataset. 
+# Retrieve the column names and print out the first 6 rows of the dataset. 
+
+... 
+...
+...
 
 
 # We liked to retrieve a number of descriptive measures from the 
@@ -19,29 +23,31 @@ head(df_hw)
 
 # Start by writing the function 
 descriptive_stats <- function(data) {
-  print(mean(data$height)) 
-  print(sd(data$height))
-  print(mean(data$weight))
-  print(sd(data$weight))
-  plot(data$weight ~ data$height)
+  print() 
+  ...
+  ...
+  ...
+  plot( ~ )
 }
 
 # Now apply the function on df_hw 
 descriptive_stats(df_hw)
 
 # We now create a function to calculate the BMI from the 
-# height and weight values 
+# height and weight values. 
+# We would like to get a print out of the BMI values in the 
+# dataset that are above 25. 
 
 
 
 BMI_check <- function(data) {
-  BMI <- (data$weight)/data$height^2
-  for (i in 1:length(BMI)){
-  if (BMI[i] > 25) {
-    print(BMI[i])
+  BMI <- 
+  for (i in 1:length()){
+    if ( > 25) {
+      print()
+    }
   }
-  }
-
+  
 }
 
 BMI_check(df_hw)
