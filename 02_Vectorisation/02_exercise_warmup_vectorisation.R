@@ -25,11 +25,14 @@ for (i in 1:) {
      }
 }
 
+
 # now create the values of the variables "outpatient" using the vectorized ifelse() command 
-outpatient <- vector(length = 1000) 
-outpatient  <- ifelse(patients == | patients == , , ) 
+outpatient_2 <- vector(length = 1000) 
+outpatient_2  <- ifelse(, , ) 
 
 
+# check if vector outpatient_1 is equal to vector outpatient_2 for all data points
+sum()
 # add the new outpatient variable to the dataframe 
-
+patient_data$outpatient <-  # you can of course also add outpatient_1
 
