@@ -87,7 +87,7 @@ September <-
 
 # calculate the percentage of complete observations (complete rows) for September, 
 # assigning the name perc_complete to it
-perc_complete <- sum(complete.cases(airquality %>% filter(Month == "September")))/nrow(airquality %>% filter(Month == "September"))
+perc_complete <- sum(complete.cases(airquality %>% filter(Month == "September")))/nrow(airquality %>% filter(Month == "September"))* 100
 
 
 # add a new variable perc_complete and its value to the dataframe "September" 

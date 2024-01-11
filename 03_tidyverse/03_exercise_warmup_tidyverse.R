@@ -86,7 +86,7 @@ airquality %>%
 
 # calculate the percentage of complete observations (complete rows) for September, 
 # assigning the name perc_complete to it
-perc_complete <- sum(complete.cases()))/nrow()
+perc_complete <- sum(complete.cases()))/nrow() * 100
 
 
 # add a new variable perc_complete and its value to the dataframe "September" with mutate()
