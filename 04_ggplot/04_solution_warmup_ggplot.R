@@ -12,7 +12,7 @@ library(viridis)
 
 help(package="datasets")
 
-# Let's load the dataset "airquality" for our tidyverse warm-up exercise
+# Let's load the dataset "airquality" for our ggplot warm-up exercise
 # The "airquality" dataset provides New York Air quality measurements from May - September 
 # for a specific year. 
 
