@@ -23,6 +23,16 @@ download.file(url1, p1f, mode = "wb")
 # Note that we need to define the NA
 # NA stands for not available and is a special place holder in R
 my_data <- read_excel(path = p1f, sheet = 1, na = "NA")
+
+
+# solution 2) 
+# check working directory with 
+getwd()
+# read in the dataset from your directory
+my_data2 <- read_excel(path = "./03_tidyverse/tidyverse_data.xlsx", sheet = 1, na = "NA")
+# you can write a function to read in several numbered files or files that include certain key words 
+
+
 # the first table cannot be recreated due to missing data
 # the second table contains the main results of the paper
 # Lets recreate this table and the stats...
@@ -30,7 +40,7 @@ my_data <- read_excel(path = p1f, sheet = 1, na = "NA")
 # variable names
 names(my_data) <- c("id", "baseline", "treatment", "outcome_treatment", "adverse_drug_reaction", "adverse_drug_reaction_content", "adverse_drug_reaction_classified", "study_completed", "reason_uncompleted", "per_protocol_analysis")
 #####
-# we will now try to replciate the table
+# we will now try to replicate the table
 # this will look slightly different from the original
 ####
 # remove the group statement before the treatment
