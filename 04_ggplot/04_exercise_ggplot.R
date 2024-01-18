@@ -9,30 +9,70 @@ library(readxl)
 library(knitr)
 library(kableExtra)
 library(stringr)
+
+###############################
+#
+#    importing dataset to R
+#
+###############################
+
+# manual solutions --> Environment --> Import Dataset 
+
+# solution 1) 
+# check working directory with 
+getwd()
+# read in the dataset from your directory
+my_data2 <- read_excel(path = "./04_ggplot/my_data.xlsx", sheet = 1, na = "NA")
+# you can write a function to read in several numbered files or files that include certain key words 
+
+# solution 2) 
 # download the publication data from Figshare
 url1 <- "https://ndownloader.figshare.com/files/9422038"
 p1f <- tempfile()
 download.file(url1, p1f, mode = "wb")
 # read in data. Note that we need to define the NA
 my_data <- read_excel(path = p1f, sheet = 1, na = "NA")
+
+
+# my_data should be the same as my_data2
+
+
+############################
+#
+# working with the dataset
+#
+############################
+
+
 # the data set contains mortaility of patients after burns depending on
-# whether and where they had inhalation burns
-# first create a new variable that is a
-# factor (0=normal, 1=subjective, 2=upper, and 3=lower)
+# whether and where they had inhalation burns (INHdiv)
+# first create a new variable from INHdiv that is a
+# factor with the levels of INHdiv assigned to new labels such that
+# 0 = normal, 1=subjective, 2=upper, and 3=lower
+
+# check which variable type is assigned to INHdiv by R 
+class(my_data$INHdiv)
+# which levels does INHdiv take if converted to a factor? 
+as.factor(my_data$INHdiv)
+
+
 my_data <-
   
+# first, erase the spelling mistake by renaming the 11th column mortaltiy to mortality 
+which(colnames(my_data) == "mortaltiy")
+colnames(my_data)[] <- ""  
   
 # create a data frame for a barplot
-# group by the new inhalation severity variable and the PFdivide
+# group by the new inhalation severity variable and the Pfdivide
 # ("We also divided the patients into four groups depending on the PF ratio (>300, 200-300, 100-200, and <100)")
-# you will need the mean of mortality (look out for spelling mistake) for each level of inhalation injury (INHdiv)
+# Be aware! The smaller the lower the PFratio the higher the Pfdivide factor!
+# you will need the mean of mortality for each level of inhalation injury (INHdiv)
 plot_data <-
   
   
   
 # create a barplot from this with mean mortality on y axis and Pfdivide on x axis
 # create a facet for each severity level
-# add error bars
 # make nice axis labels
 p.1 <- 
   
@@ -44,8 +84,9 @@ p.1 <-
 # is there a way to plot a continuous variable
 # if the dependent variable is 0 and 1?
 # how about this
+#rename the column "PF ratio" to PFratio
 names(my_data)[8] <- c("PFratio")
-ggplot(aes(y = mortaltiy, x = PFratio), data = my_data) +
+ggplot(aes(y = mortality, x = PFratio), data = my_data) +
   geom_point() +
   geom_smooth()
 # this is not a nice representation!
@@ -60,9 +101,9 @@ min(my_data$PFratio)
 max(my_data$PFratio)
 hist_data <-
   my_data %>%
-  # first add new variable breaks  that divides PFRatio in steps of 10
+  # first add new variable "bin_number"  that divides PFRatio in steps of 10
   # use the findInterval() function to assign the interval to each data point
-  mutate(breaks = ) %>%
+  mutate(bin_number = findInterval()) %>%
   # then group by dead/alive and the breaks
   group_by(          ) %>%
   # count the total number in the groups
@@ -71,7 +112,7 @@ hist_data <-
   # calculate in this case the percentage as 1-percentage
   mutate(
     pct = 
-      
+    bin = seq(20, 935, 10)[bin_number]
       
   )
 ######
@@ -79,13 +120,13 @@ hist_data <-
 # Try to understand the plot and then proceed to the next section
 #####
 ggplot() + # this just sets an empty frame to build upon
-  # first add a histopgram with geom_segment use the help of geom_segment
+  # first add a histogram with geom_segment use the help of geom_segment
   geom_segment(
     data = hist_data, size = 2, show.legend = FALSE,
-    aes(x = breaks, xend = breaks, y = mortaltiy, yend = pct, colour = factor(mortaltiy))
+    aes(x = bin, xend = bin, y = mortality, yend = pct, colour = factor(mortality))
   ) +
   # then predict a logistic regression via stat_smooth and the glm method (we will cover the details in the next session)
-  stat_smooth(data = my_data, aes(y = mortaltiy, x = PFratio), method = "glm", method.args = list(family = "binomial")) +
+  stat_smooth(data = my_data, aes(y = mortality, x = PFratio), method = "glm", method.args = list(family = "binomial")) +
   # some cosmetics
   scale_y_continuous(limits = c(-0.02, 1.02)) +
   scale_x_continuous(limits = c(10, 950)) +
@@ -107,7 +148,7 @@ hist_data <-
 ggplot() + # this just sets an empty frame to build upon
   # set the four panels
   
-  # first add a histopgram with geom_segment use the help of geom_segment
+  # first add a histogram with geom_segment use the help of geom_segment
   
   # then predict a logistic regression via stat_smooth and the glm method
   # (we will cover the details in the next session)
@@ -118,6 +159,14 @@ ggplot() + # this just sets an empty frame to build upon
   theme_bw(base_size = 12) +
   ylab("Patient Alive=0/Dead=1") +
   xlab(expression("PaO"[2] * "/FiO"[2] * " (PF) ratio"))
+
+
+
+################################
+#
+#   Additional Exercise
+#
+################################
 
 ########
 # outlier detection for PF ratio

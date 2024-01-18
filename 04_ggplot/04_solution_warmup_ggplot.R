@@ -89,7 +89,6 @@ fig3 <-
        subtitle =  "Stratified by Wind",
        x = "Temperature (°Fahrenheit)", 
        y = "Ozone")
-
 plot(fig3)
 
 
