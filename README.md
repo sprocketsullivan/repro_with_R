@@ -25,9 +25,10 @@ Important resources to use if you do not know how to proceed/need help:
 
 We will meet on Fridays, 10am - 2pm, in presence in the conference room Atrium at the BIH (5th floor, Anna-Lousia-Karsch-Straße 2, 10178 Berlin). Each course part will consist of two short lectures on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
 
-0. Pre course work: Course work on DataCamp (Introduction to R + Intermediate R)  
+0. Pre course work: Course work on DataCamp (Introduction to R + Intermediate R)
+Particularly recommended for participants with no or little experience in R.
 
-**1. Session 15.12.**
+**1. Session 21.05**
 
 Part 1 Preregistration, Functions in R  
    Exercise: Functions 
@@ -39,7 +40,7 @@ Part 2 Data Management
 I Introduction to the Tidyverse on DataCamp  
 II  Read [Tutorial](https://doi.org/10.1177/2515245918754826) for Git/Github  
 
-**2. Session 19.01.**  
+**2. Session 28.05.**  
 
 Part 1 Git and Github  
    Exercise: Git and Github  
@@ -51,7 +52,7 @@ Part 2 Tidyverse
 *Homework*:  
 Datacamp course ggplot2   
 
-**3. Session 26.01.**  
+**3. Session 19.06.**  
 
 Part 1 Advanced Plotting  
    Exercise: ggplot  
@@ -62,7 +63,7 @@ Part 2 Introduction Statistics with R
 *Homework*:  
 2 courses of your choice on DataCamp  
 
-**4. Session 02.02.**  
+**4. Session 02.07.**  
 
 Part 1 Linear Mixed Models    
    Exercise: linear_mixed_models  
