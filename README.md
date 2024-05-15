@@ -23,12 +23,12 @@ Important resources to use if you do not know how to proceed/need help:
 
 ## Course Program
 
-We will meet on Fridays, 10am - 2pm, in presence in the conference room Atrium at the BIH (5th floor, Anna-Lousia-Karsch-Straße 2, 10178 Berlin). Each course part will consist of two short lectures on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
+We will meet on Tuesdays (once on a Wednesday), 1pm - 5pm, in presence in the conference room Atrium at the BIH (5th floor, Anna-Lousia-Karsch-Straße 2, 10178 Berlin). Each course part will consist of two short lectures on issues in reproducibility in research, an introduction to a specific topic in programming with R, and an exercise.  
 
 0. Pre course work: Course work on DataCamp (Introduction to R + Intermediate R)
 Particularly recommended for participants with no or little experience in R.
 
-**1. Session 21.05**
+**1. Session 21.05.**
 
 Part 1 Preregistration, Functions in R  
    Exercise: Functions 
