@@ -10,8 +10,8 @@
 # }
 #
 # # Usage example
-# packages <- c("tidyverse", "arm", "bbmle")
-# check.packages(packages)
+packages <- c("tidyverse", "arm", "bbmle")
+check.packages(packages)
 library(tidyverse)
 library(arm)
 # read in data

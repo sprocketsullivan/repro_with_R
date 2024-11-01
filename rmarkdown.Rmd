@@ -1,0 +1,186 @@
+---
+title: "Recreation PLOS Paper"
+author: "Ulf Toelch"
+date: "6 4 2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+library(knitr)
+library(kableExtra)
+library(stringr)
+# download the publication data from Figshare
+url1 <- "https://ndownloader.figshare.com/files/9422038"
+p1f <- tempfile()
+download.file(url1, p1f, mode = "wb")
+# read in data. Note that we need to define the NA
+my_data <- read_excel(path = p1f, sheet = 1, na = "NA")
+# the data set contains mortaility of patients after burns depending on
+# whether and where they had inhalation burns
+# first create a new variable that is a
+# factor (0=normal, 1=subjective, 2=upper, and 3=lower)
+my_data <-
+  my_data %>%
+  mutate(INHdiv_fac = factor(INHdiv, labels = c("normal", "subjective", "upper", "lower")))
+```
+
+## Recreation of some results
+We will use a published data set here to recreate a table and create an advanced visualisation.
+Does inhalation injury predict mortality in burns patients or require redefinition? see  https://doi.org/10.1371/journal.pone.0185195 for publication
+the data set contains mortaility of patients after burns depending on whether and where they had inhalation burns
+
+```{r table, message=F}
+names_rows<-c("Mean age (years)","Sex (male:female)","Mean % TBSA burned")
+names_columns<-c(paste("Total (n=",nrow(my_data),")",sep=""),paste("Survivors(n=",sum(my_data$mortaltiy==0),")"),paste("Non-survivors (n=",sum(my_data$mortaltiy==1),")"))
+
+table_data<-
+my_data %>% 
+  summarise(mean_age=mean(age),sd_age=sd(age),
+            sex_male=n()-sum(sex),sex_female=sum(sex),
+            mean_TBSA=mean(TBSA),sd_TBSA=sd(TBSA)) %>%
+  mutate(across(everything(),round,2)) %>% 
+  unite(col="n_1",contains("age"),sep=" \u00b1 ") %>% 
+  unite(col="n_2",contains("sex"),sep=" : ") %>% 
+  unite(col="n_3",contains("TBSA"),sep=" \u00b1 ") %>% 
+  pivot_longer(everything()) %>% 
+  mutate(name=names_rows)
+table_data %>% 
+  kbl(col.names = c("",names_columns[1]),caption = "First Table") %>% 
+  kable_paper("hover", full_width = F)
+
+```
+Now we try to add the next two columns.
+
+```{r table2, message=F,echo=FALSE}
+my_data<-
+  my_data %>% 
+  mutate(mortality=factor(mortaltiy,levels=c("Non-Survivors","Survivors")))
+
+#next two columns
+table_data2<-
+  my_data %>% 
+  group_by(mortaltiy) %>% 
+  summarise(mean_age=mean(age),sd_age=sd(age),
+            sex_male=n()-sum(sex),sex_female=sum(sex),
+            mean_TBSA=mean(TBSA),sd_TBSA=sd(TBSA)) %>% 
+  mutate(across(everything(),round,2)) %>% 
+  unite(col="n_1",contains("age"),sep=" \u00b1 ") %>% 
+  unite(col="n_2",contains("sex"),sep=" : ") %>% 
+  unite(col="n_3",contains("TBSA"),sep=" \u00b1 ") %>% 
+  pivot_longer(cols = contains("n")) %>% 
+  pivot_wider(names_from=mortaltiy,values_from = value) %>% 
+  mutate(name=names_rows)
+table_data<-left_join(table_data,table_data2)
+
+#use kable to create Table
+#use proper colnames
+table_data %>% 
+  kbl(col.names = c("",names_columns[1:3]),caption="Second Table") %>% 
+  kable_paper("hover", full_width = F)
+
+```
+
+The plots are not very appealing, we can do better....
+
+```{r,message=FALSE,results='asis',echo=FALSE}
+####################################
+# create a data frame for a barplot
+# group by the new inhalation severity variable and the PFdivide
+# ("We also divided the patients into four groups depending on the PF ratio (>300, 200-300, 100-200, and <100)")
+# you will need the mean of mortality (look out for spelling mistake) for each level of inhalation injury (INHdiv)
+plot_data <-
+  my_data %>%
+  group_by(INHdiv_fac, Pfdivide) %>%
+  summarise(
+    mean_mort = mean(mortaltiy),
+  )
+
+# create a barplot from this with mean mortality on y axis and Pfdivide on x axis
+# create a facet for each severity level
+# add error bars
+# make nice axis labels
+p.1 <- ggplot(aes(y = mean_mort, x = Pfdivide), data = plot_data) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~INHdiv_fac) +
+  theme_classic() +
+  ylab("Mean mortality") +
+  xlab(expression("PaO"[2] * "/FiO"[2] * " (PF) ratio"))
+print(p.1)
+```
+
+Now for the survival plots
+
+```{r,results='asis',echo=FALSE,message=FALSE}
+names(my_data)[8] <- c("PFratio")
+hist_data <-
+  my_data %>%
+  # first add new variable breaks  that divides PFRatio in steps of 10
+  # use the findInterval() function to assign the interval to each data point
+  mutate(breaks = findInterval(PFratio, seq(20, 935, 10))) %>%
+  # then group by dead/alive and the breaks
+  group_by(mortaltiy, breaks) %>%
+  # count the total number in the groups
+  summarise(n = n()) %>%
+  # if patients are dead, we want them to show on top with histogram on top so you need to
+  # calculate in this case the percentage as 1-percentage
+  mutate(
+    pct = ifelse(mortaltiy == 0, n / sum(n), 1 - n / sum(n)),
+    breaks = seq(20, 935, 10)[breaks]
+  )
+######
+# now we create a the plot
+#####
+ggplot() + # this just sets an empty frame to build upon
+  # first add a histopgram with geom_segment use the help of geom_segment
+  geom_segment(
+    data = hist_data, size = 2, show.legend = FALSE,
+    aes(x = breaks, xend = breaks, y = mortaltiy, yend = pct, colour = factor(mortaltiy))
+  ) +
+  # then predict a logistic regression via stat_smooth and the glm method (we will cover the details in the next session)
+  stat_smooth(data = my_data, aes(y = mortaltiy, x = PFratio), method = "glm", method.args = list(family = "binomial")) +
+  # some cosmetics
+  scale_y_continuous(limits = c(-0.02, 1.02)) +
+  scale_x_continuous(limits = c(10, 950)) +
+  theme_bw(base_size = 12) +
+  ylab("Patient Alive=0/Dead=1") +
+  xlab(expression("PaO"[2] * "/FiO"[2] * " (PF) ratio"))
+######
+# do the same thing for the four inhale burns groups separately
+#####
+hist_data <-
+  my_data %>%
+  # first add new variable that codes breaks
+  mutate(breaks = findInterval(PFratio, seq(20, 935, 10))) %>%
+  # then group by dead/alive and the breaks
+  group_by(INHdiv_fac, mortaltiy, breaks) %>%
+  # count
+  summarise(n = n()) %>%
+  # if patients are dead, we want them to show on top with histogram on top so you need to
+  # calculate in this case the percentage as 1-percentage
+  mutate(pct = ifelse(mortaltiy == 0, n / sum(n), 1 - n / sum(n)), breaks = seq(20, 935, 10)[breaks])
+######
+# again create the plot
+#####
+ggplot() + # this just sets an empty frame to build upon
+  # set the four panels
+  facet_wrap(~INHdiv_fac) +
+  # first add a histopgram with geom_segment use the help of geom_segment
+  geom_segment(
+    data = hist_data, size = 2, show.legend = FALSE,
+    aes(x = breaks, xend = breaks, y = mortaltiy, yend = pct, colour = factor(mortaltiy))
+  ) +
+  # then predict a logistic regression via stat_smooth and the glm method
+  # (we will cover the details in the next session)
+  stat_smooth(data = my_data, aes(y = mortaltiy, x = PFratio), method = "glm", method.args = list(family = "binomial")) +
+  # some cosmetics
+  scale_y_continuous(limits = c(-0.02, 1.02)) +
+  scale_x_continuous(limits = c(10, 950)) +
+  theme_bw(base_size = 12) +
+  ylab("Patient Alive=0/Dead=1") +
+  xlab(expression("PaO"[2] * "/FiO"[2] * " (PF) ratio"))
+
+```
+
