@@ -15,11 +15,11 @@ Each participants should prior to the course:
   + [Git](https://git-scm.com/) (this is for version control)
 * Get an account for:
   + [Github](https://github.com/) You can have the academic version with Charité email
-*Set up Rstudio with ssh key to connect to github
+* Set up Rstudio with ssh key to connect to github
 Please set up RStudio on your computer to connect to github.
 We will have some time in the beginner session to test whether this works.
 
-https://public-health-scotland.github.io/git-guide/rstudio-1.html
+https://public-health-scotland.github.io/git-guide/rstudio-1.html  
 https://www.youtube.com/watch?v=_Bn78aor_N4
 
 Important resources to use if you do not know how to proceed/need help:
