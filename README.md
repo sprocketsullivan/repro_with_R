@@ -38,33 +38,29 @@ Prior to the meetings please work through the datacamp courses.
 
 **1. Session 26.11. 2pm**
 
-Reading in data
++ Reading in data
 
-Functions 
++ Functions 
 
-Vectorisation  
++ Vectorisation  
 
 
-**2. Session 04.12.**  
+**2. Session 14.01.**  
 
-Advanced Plotting  
++ Advanced Plotting  
 
-Tidyverse  
-   Exercise: tidyverse  
-   Read: https://doi.org/10.1371/journal.pone.0185195  
++ Tidyverse  
 
-*Homework*:  
-Datacamp course ggplot2   
 
-**3. Session 15.01.**  
+**3. Session in presence in Berlin 26.03.**  
 
-git/github
++ git/github
 
-Reproducible workflows
++ Reproducible workflows
 
-Advanced data manipulation
++ Advanced data manipulation
 
-AI assistance
++ AI assistance
    
 ## Technical challenges
 
