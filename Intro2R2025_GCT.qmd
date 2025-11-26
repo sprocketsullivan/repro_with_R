@@ -1,0 +1,453 @@
+---
+title: "Intro_to_R_2025"
+author: "Ulf Toelch"
+format: revealjs
+editor: visual
+---
+
+# Introduction
+
+## Reproducible vs Replicable
+
+::: {align="center"}
+<img src="slide1_reproducible.png" width="700" height="500"/>
+:::
+
+###### Patil, P., Peng, R. D., & Leek, J. (2016). A statistical definition for reproducibility and replicability. BioRxiv. <https://doi.org/10.1101/066803>
+
+## Steps in Data Analysis
+
+1.  Read in data
+2.  Manipulate data
+3.  Calculate summary/descriptive stats
+4.  Visualise data
+5.  Model data for inference
+
+## RStudio
+
+::: {align="center"}
+![](slide3_Rstudio.png){width="1200" height="675"}
+:::
+
+## Basic commands
+
+```{r}
+#| eval: true
+#| echo: true 
+  
+  y <- 1
+  y
+  x <- 2
+  y + x
+```
+
+## Basic Commands: functions
+
+```{r}
+#| echo: true
+#functions
+y <- rnorm(n = 6, mean = 0,sd = 1)
+y
+mean(y)
+```
+
+-   Each function has input parameters and produces one output object
+-   Objects created within the function are not available afterwards (saves memory)
+
+## Getting Help
+
+1.  Use the help function:\
+    help() or ?
+2.  Use stackoverflow
+3.  Use Gemini/ChatGPT (caution!)
+
+Instructions:
+
+-   find the example of the mean function, copy it into the console and understand the output
+-   what values does the argument na.rm take? When do you need it?
+
+## Installing and using new packages
+
+In R you first need to install additional packages. This is done only once!
+
+```{r}
+#| eval: false
+#| echo: true
+install.packages("car")
+```
+
+Before you can use it it needs to be loaded into memory. You need to do this each time you start R!
+
+```{r}
+#| eval: false
+#| echo: true
+library(car)
+```
+
+# First exercises
+
+## Let's start an exercise
+
+1.  Get git and github running.
+2.  Create new project from repository. <https://github.com/sprocketsullivan/repro_with_R>
+3.  You should have all folders on your computer.
+4.  Open the Exercises_intro_to_R.R in the 00_IntroSessions and follow the instructions in the file.
+5.  Raise your hand if you have questions.
+
+## Read in data
+
+```{r}
+library(knitr)
+```
+
+```{r}
+#| echo: true
+my_data <- read.csv("Brain_Size.csv")
+kable(head(my_data))
+```
+
+## Accessing the data
+
+```{r}
+#| echo: True
+my_data[1,1]
+my_data[1,]
+my_data$BRAIN_VOLUME
+```
+
+## Example for descriptive data plot
+
+```{r}
+#| echo: true
+hist(my_data$BRAIN_VOLUME,
+     breaks=seq(min(my_data$BRAIN_VOLUME),
+                max(my_data$BRAIN_VOLUME)+25,25))
+```
+
+## The normal distribution
+
+```{r}
+
+
+dnorm_one_sd <- function(x){
+  norm_one_sd <- dnorm(x)
+  # Have NA values outside interval x in [-1, 1]:
+  norm_one_sd[x <= -1 | x >= 1] <- NA
+  return(norm_one_sd)
+}
+dnorm_two_sd <- function(x){
+  norm_two_sd <- dnorm(x)
+  # Have NA values outside interval x in [-1, 1]:
+  norm_two_sd[x <= -2 | x >= 2] <- NA
+  return(norm_two_sd)
+}
+
+dnorm_three_sd <- function(x){
+  norm_three_sd <- dnorm(x)
+  # Have NA values outside interval x in [-1, 1]:
+  norm_three_sd[x <= -3 | x >= 3] <- NA
+  return(norm_three_sd)
+}
+area_one_sd <- round(pnorm(1) - pnorm(-1), 4)
+area_two_sd <- round(pnorm(2) - pnorm(-2), 4)
+area_three_sd <- round(pnorm(3) - pnorm(-3), 4)
+xvalues <- data.frame(x = c(-3, 3))
+
+library(ggplot2)
+ggplot(data=xvalues, aes(x = x)) + stat_function(fun = dnorm) +
+  stat_function(fun = dnorm_three_sd, geom = "area", fill = "lightblue",alpha = 0.3)+
+  stat_function(fun = dnorm_two_sd, geom = "area", fill = "coral", alpha=0.3)+
+  stat_function(fun = dnorm_one_sd, geom = "area", fill = "green", alpha=0.3)+
+  geom_vline(xintercept = 0, colour = "black", linetype = "dashed")+ 
+  geom_text(x = 0.5, y = 0.2, size = 3.5, fontface = "bold", 
+  label = paste0(round((area_one_sd * 100)/2 ,2), "%")) + 
+  geom_text(x = -0.5, y = 0.2, size = 3.5, fontface = "bold", 
+  label = paste0(round((area_one_sd * 100)/2 ,2), "%")) + 
+  geom_text(x = 1.5, y = 0.05, size = 3.5, fontface = "bold", 
+  label = paste0(round((pnorm(2) - pnorm(1))*100,2), "%")) + 
+  geom_text(x = -1.5, y = 0.05, size = 3.5, fontface = "bold",
+  label = paste0(round((pnorm(-1) - pnorm(-2))*100,2), "%"))+ 
+  geom_text(x = 2.3, y = 0.01, size = 3.5, fontface = "bold", 
+  label = paste0(round((pnorm(3) - pnorm(2))*100,2), "%")) + 
+  geom_text(x = -2.3, y = 0.01, size = 3.5, fontface = "bold", 
+  label = paste0(round((pnorm(-2) - pnorm(-3))*100,2), "%")) + 
+  scale_x_continuous(breaks = c(-3:3)) +
+  labs(x = "\n Number of standard Deviations From the Mean (z)", y = "f(z) \n",
+  title = "Standard Normal Distribution") + 
+  theme(plot.title = element_text(hjust = 0.5),
+  axis.title.x = element_text(face="bold", colour="brown", size=12),
+  axis.title.y = element_text(face="bold", colour="brown", size=12))+
+  theme_minimal()
+                                                        
+```
+
+## First two moments of the normal distribution
+
+Mean
+
+$$
+\mu=\frac{\sum_{i=1}^{n} x_i}{n}
+$$
+
+Standard Deviation
+
+$$
+SD=\sqrt{\frac{\sum_{i=1}^{n}{(x_i-\mu)}^2} {n-1}}
+$$
+
+## Manipulating/summarising Data
+
+```{r}
+#| echo: true
+my_data_filter <- subset(my_data,HEAD_SIZE>1400)
+
+my_data_mean <- aggregate(BRAIN_VOLUME~SEX,data=my_data,FUN=mean)
+my_data_mean
+```
+
+## Plotting Data
+
+```{r}
+#| echo: True
+boxplot(BRAIN_VOLUME~SEX,data=my_data)
+```
+
+## Making sense of the data
+
+1.  Create a new variable that normalises BRAIN_VOLUME by HEAD_SIZE
+2.  Plot another boxplot relating your new variable to gender
+
+## Plotting data
+
+```{r}
+#|echo: True
+my_data$rel_brain_size <- my_data$BRAIN_VOLUME/my_data$HEAD_SIZE
+boxplot(rel_brain_size~SEX,data=my_data)
+```
+
+## Repeating the same exercise with ggplot
+
+::: {align="center"}
+<img src="ggplt_layers.jpg" width="700" height="500"/>
+:::
+
+## ggplot build
+
+::: {align="center"}
+<img src="ggplot_step_1.jpg" width="400" height="300"/> <img src="ggplot_step_1.jpg" width="400" height="300"/>
+:::
+
+## ggplot example
+
+```{r}
+#| echo: True
+library(ggplot2)
+ggplot(aes(y=rel_brain_size,x=SEX)
+       ,data=my_data)+geom_boxplot()
+```
+
+## Inferential statistics
+
+::: {align="center"}
+<img src="IFS1.png" width="700" height="500"/>
+:::
+
+## Inferential statistics
+
+::: {align="center"}
+<img src="IFS2.jpg" width="2000" height="400"/>
+:::
+
+https://rpsychologist.com/pvalue/
+
+Krzywinski, M., & Altman, N. (2013). Power and sample size. Nature Methods, 10, 1139.
+
+## The t-statistics
+
+$$
+t=\frac{X^*-\mu_0}{s_x}
+$$
+
+## Exercise Inferential statistics I
+
+1.  Calculate a t-test of the difference between male and female brain volume (function: t.test())
+2.  What can you see in the output?
+3.  What are the degrees of freedom?
+
+https://rpsychologist.com/d3/tdist/
+
+## Statistical inference the t-test
+
+```{r}
+#| echo: True
+t_1 <- t.test(my_data$BRAIN_VOLUME~my_data$SEX)
+print(t_1)
+```
+
+## General Linear Models
+
+$$
+Y= E[Y]+\epsilon  
+$$ $$
+E[Y]=\beta X
+$$ $$
+\epsilon \sim N(0,sd)
+$$
+
+Y depends on X. Is X factorial or continuous?\
+If factorial: linear model = t-test\
+If continuous: linear model = regression\
+Function in R: lm()
+
+http://rpsychologist.com/d3/correlation/
+
+## Exercise
+
+1.  Plot the relationship between head size and brain volume
+2.  Calculate a linear model of the relationship between head size and brain volume (function: lm())
+3.  Assign linear model to variable model_1
+4.  What can you see in the output (with summary())?
+5.  Check residuals (with qqnorm() and residuals() function)
+6.  Plot observations against residuals (predict() and residuals())
+7.  Calculate interaction (use the \* operator to add SEX in linear model)
+
+## Statistical inference II
+
+```{r}
+#| echo: True
+m_1 <- lm(BRAIN_VOLUME~HEAD_SIZE,data=my_data)
+summary(m_1)
+
+```
+
+## Model Check
+
+```{r}
+#| echo: True
+library(car)
+qqPlot(m_1)
+
+```
+
+## Model Check II
+
+```{r}
+#| echo: True
+plot(residuals(m_1)~fitted(m_1))
+```
+
+## Extending Models
+
+```{r}
+#| echo: True
+m_2 <- lm(BRAIN_VOLUME~SEX+HEAD_SIZE,data=my_data)
+summary(m_2)
+```
+
+# Functions
+
+## Why functions?
+
+**The "DRY" Principle**
+
+One of the golden rules of programming is **Don't Repeat Yourself**. If you find yourself copying and pasting the same code block more than twice, it's time to write a function.
+
+**Modularity & Logic**
+
+Functions allow you to break down complex problems into manageable pieces. By encapsulating logic, you make your scripts easier to test, debug, and understand.
+
+## Blueprint
+
+An R function is defined using the function() directive and stored as an object.
+
+```{r}
+#|echo: false 
+func_name <- function(args){ #args are inputs to your function
+  #DO SOMETHING HERE
+  return() #optional
+} 
+```
+
+-   Use Descriptive Names
+
+-   One task only
+
+-   Documentation
+
+## Environment
+
+Two Key environments are:
+
+-   The *current environment*, or `current_env()` is the environment in which your function or code is currently executing.
+
+-   The *global environment*, or `global_env()`, sometimes called your “workspace”, is where all interactive (i.e., outside of a function) computation takes place.
+
+**Environment and Functions**
+
+If you call a function, R creates a new environment.This is nested within the Global Environment. At the end of the function call this environment is destroyed along with all of the variables in it. The variable of the last executed line is usually returned.
+
+## Exercise
+
+Open 01_Functions/01_exercise_functions.R and work through the exercise
+
+# Vectorisation
+
+## Why Vectorise?
+
+**Vectorisation** is the practice of applying operations to entire arrays (vectors) at once, rather than looping through individual elements.
+
+-   **Performance**: R is an interpreted language. Explicit `for` loops carry significant overhead. Vectorised functions push the looping down to optimized C or Fortran code.
+
+-   **Readability**: Vectorised code is often more concise, looking more like the mathematical equation it represents.
+
+-   **Maintainability**: Fewer lines of code generally lead to fewer bugs.
+
+## The "Loop" Approach
+
+*The inefficient way*
+
+Suppose we want to square every number in a list. In many languages, you might write a loop:
+
+```{r}
+#| echo: true # 
+#Input data 
+numbers <- 1:5 
+squared <- numeric(length(numbers))  
+# Explicit loop 
+for (i in seq_along(numbers)) {
+  squared[i] <- numbers[i] ^ 2 }  
+print(squared) 
+```
+
+## The Vectorised Approach
+
+*The R way*
+
+In R, arithmetic operators are already vectorised. We can apply the operation to the entire object directly.
+
+```{r}
+#| echo: true 
+# Input data 
+numbers <- 1:5  
+# Vectorised operation 
+squared <- numbers ^ 2  
+print(squared) 
+```
+
+::: callout-note
+Notice there is no for loop, no index variable i, and no need to pre-allocate the result vector.
+:::
+
+## Summary
+
+1.  **Avoid loops** for element-wise arithmetic (addition, multiplication, logical checks).
+
+2.  **Think in vectors**: Treat data columns as single units.
+
+3.  **Benefit**: Your code runs faster and is easier for others to read.
+
+> "Vectorisation is not just about speed; it's about speaking the language of data."
+
+## Exercise
+
+Open 02_Vectorisation/02_exercise_vectorization.R and work through the exercise

@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="Intro2R2025_GCT_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Intro2R2025_GCT_files/libs/quarto-html/tabby.min.js"></script>
+<script src="Intro2R2025_GCT_files/libs/quarto-html/popper.min.js"></script>
+<script src="Intro2R2025_GCT_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="Intro2R2025_GCT_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Intro2R2025_GCT_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="Intro2R2025_GCT_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <meta name="author" content="Ulf Toelch">
+  <title>Intro_to_R_2025</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="Intro2R2025_GCT_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="Intro2R2025_GCT_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="Intro2R2025_GCT_files/libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link href="Intro2R2025_GCT_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="Intro2R2025_GCT_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="Intro2R2025_GCT_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Intro2R2025_GCT_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Intro_to_R_2025</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Ulf Toelch 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>Introduction</h1>
+
+</section>
+<section id="reproducible-vs-replicable" class="slide level2">
+<h2>Reproducible vs Replicable</h2>
+<div data-align="center">
+<p><img src="slide1_reproducible.png" width="700" height="500"></p>
+</div>
+<h6 id="patil-p.-peng-r.-d.-leek-j.-2016.-a-statistical-definition-for-reproducibility-and-replicability.-biorxiv.-httpsdoi.org10.1101066803">Patil, P., Peng, R. D., &amp; Leek, J. (2016). A statistical definition for reproducibility and replicability. BioRxiv. <a href="https://doi.org/10.1101/066803" class="uri">https://doi.org/10.1101/066803</a></h6>
+</section>
+<section id="steps-in-data-analysis" class="slide level2">
+<h2>Steps in Data Analysis</h2>
+<ol type="1">
+<li>Read in data</li>
+<li>Manipulate data</li>
+<li>Calculate summary/descriptive stats</li>
+<li>Visualise data</li>
+<li>Model data for inference</li>
+</ol>
+</section>
+<section id="rstudio" class="slide level2">
+<h2>RStudio</h2>
+<div data-align="center">
+<p><img data-src="slide3_Rstudio.png" width="1200" height="675"></p>
+</div>
+</section>
+<section id="basic-commands" class="slide level2">
+<h2>Basic commands</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>  y <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb1-2"><a href=""></a>  y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>  x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb3-2"><a href=""></a>  y <span class="sc">+</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</section>
+<section id="basic-commands-functions" class="slide level2">
+<h2>Basic Commands: functions</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co">#functions</span></span>
+<span id="cb5-2"><a href=""></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">6</span>, <span class="at">mean =</span> <span class="dv">0</span>,<span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb5-3"><a href=""></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.89446715 -0.00140642 -0.04333492 -0.84907410 -0.92005967 -1.13262882</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">mean</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.6401618</code></pre>
+</div>
+</div>
+<ul>
+<li>Each function has input parameters and produces one output object</li>
+<li>Objects created within the function are not available afterwards (saves memory)</li>
+</ul>
+</section>
+<section id="getting-help" class="slide level2">
+<h2>Getting Help</h2>
+<ol type="1">
+<li>Use the help function:<br>
+help() or ?</li>
+<li>Use stackoverflow</li>
+<li>Use Gemini/ChatGPT (caution!)</li>
+</ol>
+<p>Instructions:</p>
+<ul>
+<li>find the example of the mean function, copy it into the console and understand the output</li>
+<li>what values does the argument na.rm take? When do you need it?</li>
+</ul>
+</section>
+<section id="installing-and-using-new-packages" class="slide level2">
+<h2>Installing and using new packages</h2>
+<p>In R you first need to install additional packages. This is done only once!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"car"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Before you can use it it needs to be loaded into memory. You need to do this each time you start R!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="first-exercises" class="title-slide slide level1 center">
+<h1>First exercises</h1>
+
+</section>
+<section id="lets-start-an-exercise" class="slide level2">
+<h2>Let’s start an exercise</h2>
+<ol type="1">
+<li>Get git and github running.</li>
+<li>Create new project from repository. <a href="https://github.com/sprocketsullivan/repro_with_R" class="uri">https://github.com/sprocketsullivan/repro_with_R</a></li>
+<li>You should have all folders on your computer.</li>
+<li>Open the Exercises_intro_to_R.R in the 00_IntroSessions and follow the instructions in the file.</li>
+<li>Raise your hand if you have questions.</li>
+</ol>
+</section>
+<section id="read-in-data" class="slide level2">
+<h2>Read in data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Brain_Size.csv"</span>)</span>
+<span id="cb11-2"><a href=""></a><span class="fu">kable</span>(<span class="fu">head</span>(my_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">SUBJECT_ID</th>
+<th style="text-align: right;">AGE</th>
+<th style="text-align: left;">SEX</th>
+<th style="text-align: right;">HEAD_SIZE</th>
+<th style="text-align: right;">BRAIN_VOLUME</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SUBJECT_0001</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">57.17709</td>
+<td style="text-align: right;">1276.014</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SUBJECT_0002</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">58.73956</td>
+<td style="text-align: right;">1265.146</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SUBJECT_0003</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">51.84828</td>
+<td style="text-align: right;">1206.201</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SUBJECT_0004</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">49.90514</td>
+<td style="text-align: right;">1045.086</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SUBJECT_0005</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">49.85881</td>
+<td style="text-align: right;">1055.700</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SUBJECT_0006</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">46.27140</td>
+<td style="text-align: right;">1068.958</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="accessing-the-data" class="slide level2">
+<h2>Accessing the data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>my_data[<span class="dv">1</span>,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "SUBJECT_0001"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>my_data[<span class="dv">1</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    SUBJECT_ID AGE SEX HEAD_SIZE BRAIN_VOLUME
+1 SUBJECT_0001  26   F  57.17709     1276.014</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>my_data<span class="sc">$</span>BRAIN_VOLUME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] 1276.014 1265.146 1206.201 1045.086 1055.700 1068.958 1169.424 1221.669
+  [9] 1085.964 1069.846 1092.817 1241.238  997.838 1123.477 1160.160 1055.188
+ [17] 1184.618 1144.757 1123.463 1180.263 1086.339  941.225 1235.858 1081.646
+ [25] 1093.055 1051.657 1164.911 1018.620 1202.222 1247.253 1002.684 1126.900
+ [33] 1056.812 1266.071 1068.944 1315.824 1014.273 1241.202 1248.163 1179.447
+ [41] 1162.312 1127.434 1335.848 1074.468 1150.462 1250.394 1171.259 1093.647
+ [49] 1160.543 1266.482 1267.970 1132.691 1297.872 1422.081 1305.888 1214.765
+ [57] 1380.445 1198.576 1327.818 1441.614 1220.253 1465.790 1331.255 1208.895
+ [65] 1081.747 1335.970 1359.374 1344.722 1266.475 1121.419 1454.352 1249.571
+ [73] 1502.971 1224.499 1048.783 1272.916 1486.442 1434.046 1327.623 1393.450
+ [81] 1171.085 1131.550 1225.893 1328.475 1215.184 1320.070 1300.768 1182.141
+ [89] 1358.096 1273.566 1447.153 1406.895 1221.192 1185.087 1322.756 1327.486
+ [97] 1355.366 1129.832 1286.297 1337.046</code></pre>
+</div>
+</div>
+</section>
+<section id="example-for-descriptive-data-plot" class="slide level2">
+<h2>Example for descriptive data plot</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">hist</span>(my_data<span class="sc">$</span>BRAIN_VOLUME,</span>
+<span id="cb18-2"><a href=""></a>     <span class="at">breaks=</span><span class="fu">seq</span>(<span class="fu">min</span>(my_data<span class="sc">$</span>BRAIN_VOLUME),</span>
+<span id="cb18-3"><a href=""></a>                <span class="fu">max</span>(my_data<span class="sc">$</span>BRAIN_VOLUME)<span class="sc">+</span><span class="dv">25</span>,<span class="dv">25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Intro2R2025_GCT_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="the-normal-distribution" class="slide level2">
+<h2>The normal distribution</h2>
+
+<img data-src="Intro2R2025_GCT_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="first-two-moments-of-the-normal-distribution" class="slide level2">
+<h2>First two moments of the normal distribution</h2>
+<p>Mean</p>
+<p><span class="math display">\[
+\mu=\frac{\sum_{i=1}^{n} x_i}{n}
+\]</span></p>
+<p>Standard Deviation</p>
+<p><span class="math display">\[
+SD=\sqrt{\frac{\sum_{i=1}^{n}{(x_i-\mu)}^2} {n-1}}
+\]</span></p>
+</section>
+<section id="manipulatingsummarising-data" class="slide level2">
+<h2>Manipulating/summarising Data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>my_data_filter <span class="ot">&lt;-</span> <span class="fu">subset</span>(my_data,HEAD_SIZE<span class="sc">&gt;</span><span class="dv">1400</span>)</span>
+<span id="cb19-2"><a href=""></a></span>
+<span id="cb19-3"><a href=""></a>my_data_mean <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(BRAIN_VOLUME<span class="sc">~</span>SEX,<span class="at">data=</span>my_data,<span class="at">FUN=</span>mean)</span>
+<span id="cb19-4"><a href=""></a>my_data_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  SEX BRAIN_VOLUME
+1   F     1144.076
+2   M     1292.924</code></pre>
+</div>
+</div>
+</section>
+<section id="plotting-data" class="slide level2">
+<h2>Plotting Data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">boxplot</span>(BRAIN_VOLUME<span class="sc">~</span>SEX,<span class="at">data=</span>my_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Intro2R2025_GCT_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="making-sense-of-the-data" class="slide level2">
+<h2>Making sense of the data</h2>
+<ol type="1">
+<li>Create a new variable that normalises BRAIN_VOLUME by HEAD_SIZE</li>
+<li>Plot another boxplot relating your new variable to gender</li>
+</ol>
+</section>
+<section id="plotting-data-1" class="slide level2">
+<h2>Plotting data</h2>
+
+<img data-src="Intro2R2025_GCT_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="repeating-the-same-exercise-with-ggplot" class="slide level2">
+<h2>Repeating the same exercise with ggplot</h2>
+<div data-align="center">
+<p><img src="ggplt_layers.jpg" width="700" height="500"></p>
+</div>
+</section>
+<section id="ggplot-build" class="slide level2">
+<h2>ggplot build</h2>
+<div data-align="center">
+<p><img src="ggplot_step_1.jpg" width="400" height="300"> <img src="ggplot_step_1.jpg" width="400" height="300"></p>
+</div>
+</section>
+<section id="ggplot-example" class="slide level2">
+<h2>ggplot example</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb22-2"><a href=""></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span>rel_brain_size,<span class="at">x=</span>SEX)</span>
+<span id="cb22-3"><a href=""></a>       ,<span class="at">data=</span>my_data)<span class="sc">+</span><span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Intro2R2025_GCT_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<section id="inferential-statistics" class="slide level2">
+<h2>Inferential statistics</h2>
+<div data-align="center">
+<p><img src="IFS1.png" width="700" height="500"></p>
+</div>
+</section>
+<section id="inferential-statistics-1" class="slide level2">
+<h2>Inferential statistics</h2>
+<div data-align="center">
+<p><img src="IFS2.jpg" width="2000" height="400"></p>
+</div>
+<p>https://rpsychologist.com/pvalue/</p>
+<p>Krzywinski, M., &amp; Altman, N. (2013). Power and sample size. Nature Methods, 10, 1139.</p>
+</section>
+<section id="the-t-statistics" class="slide level2">
+<h2>The t-statistics</h2>
+<p><span class="math display">\[
+t=\frac{X^*-\mu_0}{s_x}
+\]</span></p>
+</section>
+<section id="exercise-inferential-statistics-i" class="slide level2">
+<h2>Exercise Inferential statistics I</h2>
+<ol type="1">
+<li>Calculate a t-test of the difference between male and female brain volume (function: t.test())</li>
+<li>What can you see in the output?</li>
+<li>What are the degrees of freedom?</li>
+</ol>
+<p>https://rpsychologist.com/d3/tdist/</p>
+</section>
+<section id="statistical-inference-the-t-test" class="slide level2">
+<h2>Statistical inference the t-test</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>t_1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(my_data<span class="sc">$</span>BRAIN_VOLUME<span class="sc">~</span>my_data<span class="sc">$</span>SEX)</span>
+<span id="cb23-2"><a href=""></a><span class="fu">print</span>(t_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  my_data$BRAIN_VOLUME by my_data$SEX
+t = -7.4155, df = 95.055, p-value = 5.016e-11
+alternative hypothesis: true difference in means between group F and group M is not equal to 0
+95 percent confidence interval:
+ -188.6977 -108.9994
+sample estimates:
+mean in group F mean in group M 
+       1144.076        1292.924 </code></pre>
+</div>
+</div>
+</section>
+<section id="general-linear-models" class="slide level2">
+<h2>General Linear Models</h2>
+<p><span class="math display">\[
+Y= E[Y]+\epsilon  
+\]</span> <span class="math display">\[
+E[Y]=\beta X
+\]</span> <span class="math display">\[
+\epsilon \sim N(0,sd)
+\]</span></p>
+<p>Y depends on X. Is X factorial or continuous?<br>
+If factorial: linear model = t-test<br>
+If continuous: linear model = regression<br>
+Function in R: lm()</p>
+<p>http://rpsychologist.com/d3/correlation/</p>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ol type="1">
+<li>Plot the relationship between head size and brain volume</li>
+<li>Calculate a linear model of the relationship between head size and brain volume (function: lm())</li>
+<li>Assign linear model to variable model_1</li>
+<li>What can you see in the output (with summary())?</li>
+<li>Check residuals (with qqnorm() and residuals() function)</li>
+<li>Plot observations against residuals (predict() and residuals())</li>
+<li>Calculate interaction (use the * operator to add SEX in linear model)</li>
+</ol>
+</section>
+<section id="statistical-inference-ii" class="slide level2">
+<h2>Statistical inference II</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>m_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(BRAIN_VOLUME<span class="sc">~</span>HEAD_SIZE,<span class="at">data=</span>my_data)</span>
+<span id="cb25-2"><a href=""></a><span class="fu">summary</span>(m_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = BRAIN_VOLUME ~ HEAD_SIZE, data = my_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-122.47  -47.32    3.20   32.48  155.24 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 319.4438    48.0585   6.647  1.7e-09 ***
+HEAD_SIZE    15.5977     0.8276  18.847  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 58.31 on 98 degrees of freedom
+Multiple R-squared:  0.7838,    Adjusted R-squared:  0.7816 
+F-statistic: 355.2 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="model-check" class="slide level2">
+<h2>Model Check</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="fu">library</span>(car)</span>
+<span id="cb27-2"><a href=""></a><span class="fu">qqPlot</span>(m_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 38 73</code></pre>
+</div>
+</div>
+<img data-src="Intro2R2025_GCT_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
+<section id="model-check-ii" class="slide level2">
+<h2>Model Check II</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="fu">plot</span>(<span class="fu">residuals</span>(m_1)<span class="sc">~</span><span class="fu">fitted</span>(m_1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Intro2R2025_GCT_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
+<section id="extending-models" class="slide level2">
+<h2>Extending Models</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>m_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(BRAIN_VOLUME<span class="sc">~</span>SEX<span class="sc">+</span>HEAD_SIZE,<span class="at">data=</span>my_data)</span>
+<span id="cb30-2"><a href=""></a><span class="fu">summary</span>(m_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = BRAIN_VOLUME ~ SEX + HEAD_SIZE, data = my_data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-123.063  -47.189    2.854   32.399  155.378 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  322.842     60.095   5.372 5.34e-07 ***
+SEXM           1.507     15.857   0.095    0.924    
+HEAD_SIZE     15.526      1.125  13.798  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 58.61 on 97 degrees of freedom
+Multiple R-squared:  0.7838,    Adjusted R-squared:  0.7793 
+F-statistic: 175.8 on 2 and 97 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="functions" class="title-slide slide level1 center">
+<h1>Functions</h1>
+
+</section>
+<section id="why-functions" class="slide level2">
+<h2>Why functions?</h2>
+<p><strong>The “DRY” Principle</strong></p>
+<p>One of the golden rules of programming is <strong>Don’t Repeat Yourself</strong>. If you find yourself copying and pasting the same code block more than twice, it’s time to write a function.</p>
+<p><strong>Modularity &amp; Logic</strong></p>
+<p>Functions allow you to break down complex problems into manageable pieces. By encapsulating logic, you make your scripts easier to test, debug, and understand.</p>
+</section>
+<section id="blueprint" class="slide level2">
+<h2>Blueprint</h2>
+<p>An R function is defined using the function() directive and stored as an object.</p>
+<ul>
+<li><p>Use Descriptive Names</p></li>
+<li><p>One task only</p></li>
+<li><p>Documentation</p></li>
+</ul>
+</section>
+<section id="environment" class="slide level2">
+<h2>Environment</h2>
+<p>Two Key environments are:</p>
+<ul>
+<li><p>The <em>current environment</em>, or <code>current_env()</code> is the environment in which your function or code is currently executing.</p></li>
+<li><p>The <em>global environment</em>, or <code>global_env()</code>, sometimes called your “workspace”, is where all interactive (i.e., outside of a function) computation takes place.</p></li>
+</ul>
+<p><strong>Environment and Functions</strong></p>
+<p>If you call a function, R creates a new environment.This is nested within the Global Environment. At the end of the function call this environment is destroyed along with all of the variables in it. The variable of the last executed line is usually returned.</p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<p>Open 01_Functions/01_exercise_functions.R and work through the exercise</p>
+</section></section>
+<section>
+<section id="vectorisation" class="title-slide slide level1 center">
+<h1>Vectorisation</h1>
+
+</section>
+<section id="why-vectorise" class="slide level2">
+<h2>Why Vectorise?</h2>
+<p><strong>Vectorisation</strong> is the practice of applying operations to entire arrays (vectors) at once, rather than looping through individual elements.</p>
+<ul>
+<li><p><strong>Performance</strong>: R is an interpreted language. Explicit <code>for</code> loops carry significant overhead. Vectorised functions push the looping down to optimized C or Fortran code.</p></li>
+<li><p><strong>Readability</strong>: Vectorised code is often more concise, looking more like the mathematical equation it represents.</p></li>
+<li><p><strong>Maintainability</strong>: Fewer lines of code generally lead to fewer bugs.</p></li>
+</ul>
+</section>
+<section id="the-loop-approach" class="slide level2">
+<h2>The “Loop” Approach</h2>
+<p><em>The inefficient way</em></p>
+<p>Suppose we want to square every number in a list. In many languages, you might write a loop:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a><span class="co">#Input data </span></span>
+<span id="cb32-2"><a href=""></a>numbers <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span> </span>
+<span id="cb32-3"><a href=""></a>squared <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(numbers))  </span>
+<span id="cb32-4"><a href=""></a><span class="co"># Explicit loop </span></span>
+<span id="cb32-5"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(numbers)) {</span>
+<span id="cb32-6"><a href=""></a>  squared[i] <span class="ot">&lt;-</span> numbers[i] <span class="sc">^</span> <span class="dv">2</span> }  </span>
+<span id="cb32-7"><a href=""></a><span class="fu">print</span>(squared) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  1  4  9 16 25</code></pre>
+</div>
+</div>
+</section>
+<section id="the-vectorised-approach" class="slide level2">
+<h2>The Vectorised Approach</h2>
+<p><em>The R way</em></p>
+<p>In R, arithmetic operators are already vectorised. We can apply the operation to the entire object directly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="co"># Input data </span></span>
+<span id="cb34-2"><a href=""></a>numbers <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>  </span>
+<span id="cb34-3"><a href=""></a><span class="co"># Vectorised operation </span></span>
+<span id="cb34-4"><a href=""></a>squared <span class="ot">&lt;-</span> numbers <span class="sc">^</span> <span class="dv">2</span>  </span>
+<span id="cb34-5"><a href=""></a><span class="fu">print</span>(squared) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  1  4  9 16 25</code></pre>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Notice there is no for loop, no index variable i, and no need to pre-allocate the result vector.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ol type="1">
+<li><p><strong>Avoid loops</strong> for element-wise arithmetic (addition, multiplication, logical checks).</p></li>
+<li><p><strong>Think in vectors</strong>: Treat data columns as single units.</p></li>
+<li><p><strong>Benefit</strong>: Your code runs faster and is easier for others to read.</p></li>
+</ol>
+<blockquote>
+<p>“Vectorisation is not just about speed; it’s about speaking the language of data.”</p>
+</blockquote>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
+<p>Open 02_Vectorisation/02_exercise_vectorization.R and work through the exercise</p>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="Intro2R2025_GCT_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="Intro2R2025_GCT_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="Intro2R2025_GCT_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="Intro2R2025_GCT_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="Intro2R2025_GCT_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Intro2R2025_GCT_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="Intro2R2025_GCT_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="Intro2R2025_GCT_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="Intro2R2025_GCT_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="Intro2R2025_GCT_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

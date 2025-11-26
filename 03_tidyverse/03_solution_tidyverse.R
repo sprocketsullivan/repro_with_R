@@ -92,11 +92,11 @@ p.2 <- prop.test(x = table_data$n_outcome[3:4], n = table_data$N_outcome[3:4])
 prop.test(x = c(155,159), n = c(200,200))
 fisher.test(x = matrix(c(155,159,200,200),nrow=2))
 chisq.test(x = matrix(c(155,159,200-155,200-159),nrow=2))
-
+chisq.test(x = matrix(c(155,159,200-155,200-159),nrow=2),correct=F)
 table_data$p <- c(NA, p.1$p.value, NA, p.2$p.value)
 options(knitr.kable.NA = "")
 # then print it in a table using the kable command
-kable(table_data,
+kable(table_data,output="html",
   digits = 2,
   col.names = c("Analysis", "Treatment", "n", "N", "Percentage", "p-value")
 ) %>%
@@ -173,3 +173,11 @@ table_data4 <-
   summarise(number_obs = n()) %>%
   spread(key = treatment, value = number_obs) %>%
   arrange(adverse_drug_reaction_classified)
+
+helper<- function(x){
+  y<-x^2
+  z<-y^2
+}
+
+
+

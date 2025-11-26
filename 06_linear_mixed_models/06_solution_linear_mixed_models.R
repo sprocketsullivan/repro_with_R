@@ -31,7 +31,7 @@ p.2 <- ggplot(aes(x = factor(visit), y = FEV1z, col = factor(asthma)), data = my
 plot(p.2)
 
 # calculate a simple linear mixed model with Identifier as a random effect on the Intercept
-m.1 <- lmer(FEV1z ~ factor(asthma) + (1 | Identifier), data = my_data)
+m.1 <- lmer(FEV1z ~ factor(asthma)  + (1 | Identifier), data = my_data)
 
 # understand the output
 display(m.1)

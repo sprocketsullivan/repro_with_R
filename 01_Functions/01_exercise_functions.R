@@ -5,7 +5,7 @@ for (i in 1:100) {
 }
 # Exercise 1
 # write a function to load and retrieve the mean and max of each file and plot a boxplot
-# You will first have to read in the creates files within the function with read.csv()
+# You will first have to read in the created files within the function with read.csv()
 
 
 
@@ -20,7 +20,7 @@ for () {
 }
 
 
-# now plot only extreme datasets
+# now plot only extreme data sets
 # where the mean is more than 1 away from 0
 # give the number of the data set
 # write a separate function for this
