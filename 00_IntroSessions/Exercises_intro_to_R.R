@@ -6,9 +6,9 @@
 # Read in data from the comma-separated value file Brain_Size.csv.
 # Use the read_csv function and assign the result to a new variable my_data.
 # What class does this variable have? Use the class function.
-
+my_data <- read.csv("Brain_Size.csv")
 # Look at the data with the View function (capital V).
-
+my_data <- 
 # Make a new data frame my_data_filter where you remove all participants
 # with head sizes below 50 and brain volume above 1400.
 # Use the subset function for this.

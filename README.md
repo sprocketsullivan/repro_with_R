@@ -36,7 +36,7 @@ We will meet online via Teams and in presence in the last session. You will reci
 Prior to the meetings please work through the datacamp courses.
 
 
-**1. Session 26.11. 2pm**
+**1. Session 01.12. 2pm**
 
 + Reading in data
 
@@ -45,14 +45,14 @@ Prior to the meetings please work through the datacamp courses.
 + Vectorisation  
 
 
-**2. Session 14.01.**  
+**2. Session 09.02. 2pm**  
 
 + Advanced Plotting  
 
 + Tidyverse  
 
 
-**3. Session in presence in Berlin 26.03.**  
+**3. Session in presence in Berlin 9 am**  
 
 + git/github
 
